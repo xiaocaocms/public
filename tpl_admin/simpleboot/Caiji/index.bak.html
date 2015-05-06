@@ -1,0 +1,421 @@
+<admintpl file="caijiheader"/>
+<link href="__ROOT__/statics/simpleboot/css/cookiescaiji.css" rel="stylesheet">
+</head>
+<body>
+<div  class="clearfix wrap">
+    <div  class="main">
+        <div  style="margin-left: 20px;" class="inmain" id="inmain">
+            <form class="J_ajaxForm" action="{:U('indexadmin/index')}" method="post" id="list_search">
+                <div  id="brix_5208" bx-tmpl="q" bx-datakey="q">
+                    <ul class="table-title table-title-extra clearfix">
+                        <li class="selected">
+                            <h2>
+                                <span>单品推广</span>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2>
+                                <a href="#">店铺推广(开发中)</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <div>
+                        <div class="self-search">
+                            <div class="bd clearfix">
+                                <div class="search-panel ks-combobox ks-combobox-shown">
+                                    <input id="q" name="q" placeholder="请输入你要搜索的单品名称或URL" autocomplete="off" type="text" value="{$list.data.keyword}">
+                                </div> <a href="javascript:void($('#list_search').submit());" class="iconfont search-btn" href="#">ő</a> 
+                            </div>
+                        </div>
+                        <vframe id="magix_vf_items_query">
+                            <div class="search-filter">
+                                <div  class="filter-panel filter-panel-fold">
+                                    <dl>
+                                        <dt>类目</dt>
+                                        <dd class="J_labelGroup">
+                                            <ul class="cat clearfix">
+                                                <li class="selected"><a href="#" class="filter-item"  atp="{ptype:'items',ctype:'items_cat" mx-owner="magix_vf_items_query">全部</a>
+                                                </li>
+                                                <foreach name="list['data']['qpResult']['navCats']" item="v">
+                                                <li>
+                                                    <a class="filter-item" type="button" dataid="{$v.id}">{$v.name}</a>
+                                                </li>
+                                                </foreach>
+                                            </ul> <a style="display: none;" class="more" href="#">更多<i class="icon iconfont">ƕ</i></a> 
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <!-- <div class="filter-panel">
+                                    <dl>
+                                        <dt style="top:-1px;">查询</dt>
+                                        <dd>
+                                            <form id="J_items_filter_from">
+                                                <ul class="require-filter clearfix">
+                                                    <li class="filter-item">
+                                                        <span class="label">收入比率</span>
+                                                        <div class="field">
+                                                            <input class="input filter-text" name="startCommrate" value="" maxlength="2" mx-keyup="parseNum" mx-owner="magix_vf_items_query" type="text">%以上</div>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <span class="label">30天推广量</span>
+                                                        <div class="field">
+                                                            <input class="input filter-text" name="startTotalnum" value="" mx-keyup="parseNum" mx-owner="magix_vf_items_query" type="text">
+                                                            <span>-</span>
+                                                            <input class="input filter-text" name="endTotalnum" value="" mx-keyup="parseNum" mx-owner="magix_vf_items_query" type="text">
+                                                        </div>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <span class="label">价格</span>
+                                                        <div class="field">
+                                                            <input class="input filter-text" name="startPrice" value="" mx-keyup="parseNum" mx-owner="magix_vf_items_query" type="text">
+                                                            <span>-</span>
+                                                            <input class="input filter-text" name="endPrice" value="" mx-keyup="parseNum" mx-owner="magix_vf_items_query" type="text">
+                                                        </div>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <span class="label">卖家信用</span>
+                                                        <div class="field">
+                                                            <div tabindex="0" >
+                                                                <span class="dropdown-hd">
+                                                                    <span class="dropdown-text" value="">全部</span> <i class="iconfont icon-arrow-down">ǋ</i> 
+                                                                </span>
+                                                                <ul style="display: none;" class="dropdown-list">
+                                                                    <li class="dropdown-item dropdown-itemselected">
+                                                                        <span value="">全部</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="20">5皇冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="19">4皇冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="18">3皇冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="17">2皇冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="16">1皇冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="15">5蓝冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="14">4蓝冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="13">3蓝冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="12">2蓝冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="11">1蓝冠</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="10">5钻</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="9">4钻</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="8">3钻</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="7">2钻</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="6">1钻</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="5">5心</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="4">4心</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="3">3心</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="2">2心</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                    <li class="dropdown-item">
+                                                                        <span value="1">1心</span><i class="iconfont icon-ok">~</i>
+                                                                    </li>
+                                                                </ul>
+                                                                <input name="startRatesum" value="" type="hidden">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input name="loc" type="hidden">
+                                                        <span class="btn btn-size25 location" id="J_location">
+                                                            <span>地区</span> <i class="iconfont icon-arrow-down">ǋ</i> 
+                                                        </span>
+                                                        <div class="location-select" id="J_locationSelect">
+                                                            <ul class="loc-list clearfix">
+                                                                <li class="checked"><a href="#" val="-1"  mx-owner="magix_vf_items_query">地区</a>
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="loc-list clearfix">
+                                                                <li><a href="#" val="江苏,浙江,上海"  mx-owner="magix_vf_items_query">江浙沪</a>
+                                                                </li>
+                                                                <li><a href="#" val="广州,深圳,中山,珠海,佛山,东莞,惠州"  mx-owner="magix_vf_items_query">珠三角</a>
+                                                                </li>
+                                                                <li><a href="#" val="香港,澳门,台湾"  mx-owner="magix_vf_items_query">港澳台</a>
+                                                                </li>
+                                                                <li><a href="#" val="美国,英国,法国,瑞士,澳洲,新西兰,加拿大,奥地利,韩国,日本,德国,意大利,西班牙,俄罗斯,泰国,印度,荷兰,新加坡,其它国家"  mx-owner="magix_vf_items_query">海外</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">北京</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">上海</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">广州</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">深圳</a>
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="loc-search">
+                                                                <li>
+                                                                    <input name="loc" class="input" id="J_loc_input" value="" placeholder="多个地区用逗号隔开" type="text"> <a class="btn" href="#" mx-click="locSearch" mx-owner="magix_vf_items_query">确定</a> 
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="loc-list clearfix">
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">杭州</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">温州</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">宁波</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">南京</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">苏州</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">济南</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">青岛</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">大连</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">无锡</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">合肥</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">天津</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">长沙</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">武汉</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">郑州</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">石家庄</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">成都</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">重庆</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">西安</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">昆明</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">南宁</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">福州</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">厦门</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">南昌</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">东莞</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">沈阳</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">长春</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">哈尔滨</a>
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="loc-list clearfix">
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">河北</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">河南</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">湖北</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">湖南</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">福建</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">江苏</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">江西</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">广东</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">广西</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">海南</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">浙江</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">安徽</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">吉林</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">辽宁</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">黑龙江</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">山东</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">山西</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">陕西</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">新疆</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">内蒙古</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">云南</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">贵州</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">四川</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">甘肃</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">宁夏</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">青海</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">西藏</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">香港</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">澳门</a>
+                                                                </li>
+                                                                <li><a href="#"  mx-owner="magix_vf_items_query">台湾</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="filter-item submit-item"> <a href="#" class="btn btn-size25" mx-click="query" atp="{ptype:'items',ctype:'items_query" mx-owner="magix_vf_items_query">确定</a> 
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </dd>
+                                    </dl>
+                                </div> -->
+                            </div>
+                        </vframe>
+                        <vframe id="magix_vf_items_list">
+                            <div style="padding-top: 0px;" class="table-container self-itemlist" id="J_item_list">
+                                <div style="position: static; width: auto; left: 0px; top: 0px;" class="table-head-fix">
+                                    <table class="table" bx-tmpl="sort" bx-datakey="list">
+                                        <thead>
+                                            <tr>
+                                                <th class="left">商品推广信息</th>
+                                                <th class="left" width="70">折扣</th>
+                                                <th class="left" width="70"><a href="#" class="">单价<i class="iconfont icon-sort">ŀ</i></a>
+                                                </th>
+                                                <th class="center" width="80"> <a href="#" class="">收入比率<i class="iconfont icon-sort">ŀ</i></a><i class="iconfont cursor-pointer fontsize-13 ml2" title="卖家佣金比率+平台补贴比率 [淘宝卖家和各平台愿意为推广商品而付出的商品单价的百分之几（比率=佣金/商品价格。由于商家/平台可能会对商品价格和佣金比率进行调整，实际推广过程中实际获取佣金可能会发生变化）">Ũ</i> 
+                                                </th>
+                                                <th class="center" width="70">佣金<i  class="iconfont cursor-pointer fontsize-13 ml2" title="淘宝卖家为淘宝客推广并成交而支付的报酬（佣金=商品成交价格*佣金比率，由于商家可能会对商品价格和佣金比率进行调整，实际推广过程中实际获取佣金可能会发生变化）。">Ũ</i> 
+                                                </th>
+                                                <th class="left" width="90"> <a href="#"  class="">30天推广量<i class="iconfont icon-sort">ŀ</i></a><i class="iconfont cursor-pointer fontsize-13 ml2" title="淘宝卖家推广商品30天内的累计成交量。">Ũ</i> 
+                                                </th>
+                                                <th class="left" width="110"> <a href="#"  class="">30天支出佣金<i class="iconfont icon-sort">ŀ</i></a><i  class="iconfont cursor-pointer fontsize-13 ml2" title="{closable:false,align:{node:false,points:['tr','br']},mouseDelay:0.2,content:'淘宝卖家推广商品30天内累计支出的佣金（30天支出佣金=佣金*30天推广量，注：由于淘宝卖家30天内可能会调整单价或佣金比率，所以按照上述公式计算最终得出的30天支出的佣金和实际列表中看到的可能会有些差异）。">Ũ</i> 
+                                                </th>
+                                                <th class="center" width="110">操作</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <table  class="table" bx-name="tables" bx-tmpl="list" bx-datakey="list">
+                                    <tbody>
+                                        <foreach name="list['data']['pagelist']" item="v">
+                                        <tr>
+                                            <td class="left">
+                                                <div class="list-group">
+                                                    <a href="{$v.auctionUrl}" class="img" target="_blank">
+                                                        <img src="{$v.pictUrl}_80x80.jpg" onerror="this.src='http://gtms01.alicdn.com/tps/i1/T1syqxFbNdXXczfNfo-80-80.gif'">
+                                                    </a>
+                                                    <ul class="attr">
+                                                        <li class="title">
+                                                            <if condition="!empty($v['zkType'])"><span class="color-red">[{$v.zkType}]</span></if> <a href="{$v.auctionUrl}" target="_blank">{$v.title}</a> 
+                                                        </li>
+                                                        <li class="seller">
+                                                            <span class="color-grey">掌柜：{$v.nick}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td class="left" width="70">{$v.zkRate}折</td>
+                                            <td class="left" width="70">￥{$v.zkPrice}</td>
+                                            <td class="center" width="80">
+                                                <span class="color-green">{$v.commissionRatePercent}%</span>
+                                            </td>
+                                            <td class="center" width="70">
+                                                <span class="green">￥{$v.calCommission}</span>
+                                            </td>
+                                            <td class="center" width="90">{$v.totalNum}件</td>
+                                            <td class="center" width="110">￥{$v.totalFee}</td>
+                                            <td class="center" width="110">
+                                                <div class="operation">
+                                                    <p><a class="btn btn-blue" href="javascript:void(0)" onclick="caiji(this)" item-json='<php>echo json_encode($v);</php>'>立即采集</a>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </foreach>
+                                    </tbody>
+                                </table>
+                                <div class="tfoot">
+                                    <div  class="pagination" title="{count:4000,index:1,size:40,sizes:[40],simplify:true,statistics:true,sizeChange:true,jump:true,goTo:false}">
+                                        <div class="pagination-info">
+                                            <span>当前</span>
+                                            <span class="b">1-40</span>
+                                            <span>条</span>
+                                            <span class="mr">共</span>
+                                            <span class="b">4000</span>
+                                            <span>条</span>
+                                            <span class="mr">每页展现</span>
+                                            <div tabindex="0" class="dropdown">
+                                                <span class="dropdown-hd">
+                                                    <span class="dropdown-text" value="0">40</span>
+                                                </span>
+                                                <ul style="display: none;" class="dropdown-list dropdown-list-noicon">
+                                                    <li class="dropdown-item dropdown-itemselected">
+                                                        <span value="0">40</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <span>条</span>
+                                        </div>
+                                        <div class="pagination-pages">
+                                            <div class="pagination-page">
+                                                <span class="page-simply">1/100</span><a title="下一页" href="http://pub.alimama.com/myunion.htm?spm=a2320.7388781.a214tr8.d006.WCNNTS&page=2&pagesize=40#!%2Fpromo%2Fself%2Fitems%3Fq%3Dsd" class="page-next"><i class="iconfont">ƒ</i></a>
+                                            </div>
+                                            <div class="pagination-count">
+                                                <span>共</span>
+                                                <span class="b">100</span>
+                                                <span>页</span>
+                                            </div>
+                                            <div class="pagination-form">
+                                                <span>向第</span>
+                                                <input class="page-num" value="2" name="page" type="text">
+                                                <span>页</span><a class="btn-jump btn btn-size25">跳转</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </vframe>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

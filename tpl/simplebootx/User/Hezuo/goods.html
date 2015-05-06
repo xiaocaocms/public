@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>商家帐户 - 商家中心 - {$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}">
+<meta name="description" content="{$site_seo_description}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="__TMPL__Public/css/home.css" />
+<tc_include file="Public:common" />
+</head>
+<body>
+<div class="header">
+    <div class="area">
+        <div class="logo">
+            <div class="fl"><a class="juan-logo fl" href="/" title="首页"></a><a href="/"><span class="juan-busi fl"></span></a></div>
+        </div>
+        <div class="busi_login fr"><p class="y_login" style="display:block;"><span class="user_img"><img width="26" height="26" src="__TMPL__Public/images/default.jpg_80x80.jpg"></span>您好!<strong>{$user.user_nicename}</strong><a class="out" href="{:U('user/index/logout')}">退出</a></p></div>
+    </div>
+</div>
+
+
+<div class="busi_nav">
+    <div class="m_nav">
+        <ul class="enr_nav fl">
+            <li><a href="{:U('hezuo/index')}">商品报名</a></li>
+            <li><a href="{:U('hezuo/goods')}" class="active">商品管理</a></li>
+        </ul>
+        <ul class="my_zhuanghu fr">
+            <li><a href="{:U('user/hezuo/home')}">我的账户管理</a></li>
+        </ul>
+    </div>
+</div>
+<style>
+	.type_list li{float:left;margin-right:15px;border:1px solid #e2e2e2;background:#f9f9f9;width:98px;height:38px;line-height:38px;text-align:center;font-weight:bold;border-radius:5px;}
+	.type_list .hover li{color:#fff;background:#ff2d5e;}
+</style>
+<div class="main mt20 clear">
+    <div class="mian-center">
+        <div class="flow-path mb25 clear">
+            <ul class="type_list">
+               	<a href="{:U('hezuo/goods')}" <php>if($_REQUEST['state']==""){</php> class='hover' <php>}</php>><li>全部</li></a>
+                <a href="{:U('hezuo/goods',array('state'=>'0'))}" <php>if($_REQUEST['state']=='0'){</php> class='hover' <php>}</php>><li>未审核</li></a>
+                <a href="{:U('hezuo/goods',array('state'=>'-1'))}" <php>if($_REQUEST['state']=='-1'){</php> class='hover' <php>}</php>><li>驳回</li></a>
+                <a href="{:U('hezuo/goods',array('state'=>'1'))}" <php>if($_REQUEST['state']=='1'){</php> class='hover' <php>}</php>><li>审核通过</li></a>
+                <a href="{:U('hezuo/goods',array('state'=>'2'))}" <php>if($_REQUEST['state']=='2'){</php> class='hover' <php>}</php>><li>已下架</li></a>
+               <div class="clear"></div>
+            </ul>
+		</div>
+        <div>
+        	<form action="{:U('hezuo/goods')}" method="post" id="search_form" />
+            <input type="hidden" name="state" value="<?php echo $_REQUEST['state'];?>">
+            <select name="cid">
+            <option value="">全部</op>
+            <volist name="cateList" id="vo">
+            	<option value="{$vo.id}" <php>if($_REQUEST['cid']==$vo['id']){</php> selected <php>}</php> >{$vo.cateName}</option>
+            </volist>
+            </select>
+            淘宝商品链接：<input type="text" name="url" value="{$_REQUEST['url']}"/>
+           	<input type="button" id="sub_search" value="搜索" />
+            </form>
+        </div>
+        <style>
+        	.goodsListTable{border-top:1px solid #ccc;border-right:1px solid #ccc;}
+			.goodsListTable td,.goodsListTable th{border-bottom:1px solid #ccc;border-left:1px solid #ccc;padding:5px;}
+        </style>
+        <table width="1000" align="center" class="goodsListTable mt20 ">
+            	<tr>
+                	<th>商品ID</th>
+                	<th>商品名称</th>
+                	<th>现价</th>
+                	<th>商品URL</th>
+                    <th>活动分类</th>
+                    <th>报名时间</th>
+                    <th>当前状态</th>
+                </tr>
+                <php>if(!$goodsList){</php>
+                <tr>
+                	<td colspan="7">暂无商品</td>
+                </tr>
+                <php>}</php>
+                <volist name="goodsList" id="vo">
+                <tr>
+                	<td>{$vo.gid}</td>
+                	<td>{$vo.goods_name}</td>
+                	<td>{$vo.goods_price}</td>
+                	<td><a href="{$vo.url}" target="_blank">{$vo.url}</a></td>
+                	<td>{$vo.cateName}</td>
+                	<td>{$vo.ctime|date="Y-m-d H:i:s",###}</td>
+                	<td>
+                    	<php>
+                        switch($vo['state']){
+                            case -1:
+                                $state='被驳回，驳回原因：'.$vo['info'];
+                            break;
+                            case 0:
+                                $state='等待审核';
+                            break;
+                            case 1:
+                                $state='审核通过';
+                            break;
+                            case 2:
+                                $state='已下架';
+                            break;
+                        }
+                    </php>
+                    {$state}
+                    </td>
+                </tr>
+                </volist>
+            </table>
+            <div class="page">{$page}</div>
+            <script>
+				$(function(){
+					$("#sub_search").click(function(){
+						$("#search_form").submit();
+					});
+				})
+			</script>
+    </div>
+</div>
+<tc_include file="Public:footer" />
+</body></html>

@@ -1,0 +1,202 @@
+html, body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0px; padding: 0px; }
+body, button, input, select, textarea { font: 12px/1.5 "Microsoft Yahei",Tahoma,Helvetica,Arial,sans-serif,宋体; }
+address, cite, dfn, em, var, i { font-style: normal; }
+ul, ol, dl, li { list-style: outside none none; }
+fieldset, img { border: 0px none; }
+button, input, select, textarea { font-size: 100%; }
+a { color: rgb(94, 94, 94); text-decoration: none; }
+a:hover { color: rgb(255, 51, 102); text-decoration: underline; }
+:focus { outline: 0px none; }
+body { background: none repeat scroll 0% 0% rgb(246, 246, 246); color: rgb(102, 102, 102); height: 100%; min-width: 1000px; }
+.red { color: rgb(255, 0, 0); }
+.fl { float: left; display: inline; }
+.fr { float: right; display: inline; }
+.pr { position: relative; }
+input::-moz-placeholder { color: rgb(153, 153, 153); }
+textarea::-moz-placeholder { color: rgb(153, 153, 153); }
+.clearfix::after { clear: both; display: block; height: 0px; overflow: hidden; visibility: hidden; width: 0px; }
+.clear { clear: both; }
+.clear::after, .clear::before { content: ""; display: table; }
+.clear::after { clear: both; overflow: hidden; }
+.clear { clear: both; }
+.mt20 { margin-top: 20px ! important; }
+.mb20 { margin-bottom: 20px ! important; }
+.header { background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+.header .area { position: relative; height: 85px; width: 980px; margin: 0px auto; }
+.header .logo, .header .search .smt, .header .protection, .new-users ul li i { display: block; background: url('../images/header-total.gif') no-repeat scroll 0% 0% transparent; }
+.header .logo, .header .search, .header .protection { position: absolute; }
+.header .logo { top: 17px; left: 0px; width: 160px; height: 52px; background-position: -78px -52px; }
+.header .logo .other-logo { height: 0px; margin-left: 14px; overflow: hidden; padding-top: 34px; width: 89px; }
+.header .protection { background-position: 0px 0px; height: 33px; width: 465px; top: 28px; right: 270px; }
+.header.header-myjp .protection { right: 0px; }
+.header .protection a { display: block; float: left; height: 16px; width: 98px; margin: 0px 0px 0px 34px; }
+.header .protection a.lowest { margin-left: 75px; width: 85px; }
+.header .protection a.check { margin-left: 75px; width: 85px; }
+.header .mainNav { width: 100%; height: 40px; background: none repeat scroll 0% 0% rgb(42, 20, 43); }
+.header .mainNav .nav { width: 980px; height: 40px; margin: 0px auto; }
+.header .mainNav .nav .navigation li { float: left; display: inline; height: 40px; position: relative; z-index: 11; }
+.header .mainNav .nav .navigation li a { float: left; cursor: pointer; padding: 10px 24px 0px; color: rgb(255, 255, 255); font-size: 14px; height: 30px; }
+.header .mainNav .nav .navigation li.current { background: none repeat scroll 0% 0% rgb(248, 40, 92); }
+.header .mainNav .nav .navigation li.current a:hover { text-decoration: none; }
+.header .mainNav .nav .navigation li a:hover { text-decoration: underline; }
+.header .state-show { line-height: 40px; position: relative; z-index: 100; }
+.header .state-show .normal-h { font-size: 14px; color: rgb(255, 255, 255); height: 40px; float: left; display: inline; padding: 0px 15px; }
+.icon-normal, #toolbar .bar-con .right-show div.logined-show .normal-box ul li a .icon { background: url('../images/icon-total.png') no-repeat scroll 0px 0px transparent; }
+.icon-normal { background-position: 0px 0px; display: inline-block; vertical-align: -3px; margin-right: 3px; }
+.icon-phone { background: url('../images/icon-phone.gif') no-repeat scroll 0% 0% transparent; height: 35px; width: 12px; float: left; vertical-align: baseline; }
+.icon-bag { background-position: 0px -156px; width: 16px; height: 18px; float: left; margin: 8px 11px 0px 12px; }
+.icon-clock { width: 14px; height: 14px; background-position: right -20px; }
+#toolbar { background: none repeat scroll 0% 0% rgb(246, 246, 246); height: 36px; }
+#toolbar .bar-con { width: 980px; margin: 0px auto; line-height: 34px; }
+#toolbar .bar-con .topNav li { float: left; display: inline; border-right: 1px solid rgb(226, 226, 226); }
+#toolbar .bar-con .topNav li.first { border-left: 1px solid rgb(226, 226, 226); }
+#toolbar .bar-con .topNav li a { display: block; float: left; padding: 0px 18px; color: rgb(102, 102, 102); height: 36px; }
+#toolbar .bar-con .topNav li a.red { color: rgb(238, 78, 34); }
+#toolbar .bar-con .topNav li a.active { background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+#toolbar .bar-con .topNav li a.active:hover { text-decoration: none; }
+#toolbar .bar-con .right-show div.logined-show, #toolbar .bar-con .right-show div.personal-show, #toolbar .bar-con .right-show div.bag-show, #toolbar .bar-con .right-show div.other-show, #toolbar .bar-con .right-show div.union-login, #toolbar .bar-con .right-show div.login-show { display: block; float: left; color: rgb(226, 226, 226); }
+#toolbar .bar-con .right-show div a { margin-left: 10px; color: rgb(51, 51, 51); }
+#toolbar .bar-con .right-show div a .count { width: 12px; padding: 0px 3px; background: none repeat scroll 0% 0% rgb(255, 56, 56); color: rgb(255, 255, 255); margin-left: 2px; }
+#toolbar .bar-con .right-show div.logined-show { position: relative; z-index: 12; height: 36px; }
+#toolbar .bar-con .right-show div.logined-show .normal-a { display: block; margin-top: 10px; line-height: normal; cursor: pointer; }
+#toolbar .bar-con .right-show div.logined-show img { margin-right: 5px; float: left; display: inline; width: 18px; height: 18px; vertical-align: middle; }
+#toolbar .bar-con .right-show div.logined-show a .user { color: rgb(255, 51, 102); font-weight: bold; display: inline; float: left; max-width: 64px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#toolbar .bar-con .right-show div.logined-show a .cur { display: inline; float: left; background: url('../images/cur.gif') no-repeat scroll 0% 0% transparent; width: 10px; height: 5px; transition: all 0.4s ease 0s; margin-left: 2px; margin-top: 6px; }
+#toolbar .bar-con .right-show div.logined-show a:hover { text-decoration: none; }
+#toolbar .bar-con .right-show div.logined-show .normal-box { position: absolute; top: 35px; left: 10px; background: none repeat scroll 0% 0% rgb(255, 255, 255); border: 1px solid rgb(247, 220, 224); width: 92px; border-radius: 5px; overflow: hidden; display: none; z-index: 13; }
+#toolbar .bar-con .right-show div.logined-show .login-box { height: 120px; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li { height: 30px; line-height: 30px; border-bottom: 1px solid rgb(247, 220, 224); vertical-align: top; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a .icon { width: 12px; height: 14px; display: inline; margin: 10px 5px 0px 10px; float: left; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a span { display: inline; float: left; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a .icon-01 { background-position: 0px -49px; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a .icon-02 { background-position: 0px -79px; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a .icon-03 { background-position: 0px -108px; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a .icon-04 { background-position: 0px -136px; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a { display: block; margin-left: 0px; color: rgb(206, 0, 63); width: 92px; height: 30px; cursor: pointer; }
+#toolbar .bar-con .right-show div.logined-show .normal-box ul li a:hover { background: none repeat scroll 0% 0% rgb(252, 240, 240); text-decoration: none; }
+#toolbar .bar-con .right-show .personal-show a:hover { text-decoration: none; }
+#toolbar .bar-con .right-show .personal-show a:hover span { text-decoration: underline; }
+#toolbar .bar-con .right-show .logined-show img { vertical-align: -5px; margin-right: 5px; }
+#toolbar .bar-con .right-show .bag-show { position: relative; z-index: 101; width: 107px; background: url('../images/li_cur.png') no-repeat scroll right 12px transparent; color: rgb(246, 246, 246) ! important; }
+#toolbar .bar-con .right-show .bag-show .bag-a { position: absolute; width: 107px; display: block; top: 0px; left: 0px; text-align: center; z-index: 15; margin-left: 0px; }
+#toolbar .bar-con .right-show .bag-show .bag-a span { line-height: 16px; color: rgb(153, 153, 153); }
+#toolbar .bar-con .right-show .bag-show .bag-a span.empty { line-height: 34px; color: rgb(51, 51, 51); }
+#toolbar .bar-con .right-show .bag-show .bag-a .icon-bag { position: relative; }
+#toolbar .bar-con .right-show .bag-show .bag-a:hover { text-decoration: none; cursor: pointer; }
+#toolbar .bar-con .right-show .bag-show:hover { background: none repeat scroll 0% 0% rgb(255, 255, 255); box-shadow: 0px 1px 3px rgb(217, 217, 217); color: rgb(255, 255, 255); }
+#toolbar .bar-con .right-show .bag-show:hover .bag-a { height: 40px; background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+#toolbar .bar-con .right-show .bag-show:hover .bag-tool { display: block; }
+.bag-tool { background-color: rgb(255, 255, 255); box-shadow: 0px 1px 3px rgb(217, 217, 217); display: none; padding: 10px 20px; position: absolute; right: 0px; top: 36px; width: 293px; z-index: 11; }
+.bag-tool #loadingimg { background: url('../images/loading.gif') no-repeat scroll 0% 0% transparent; height: 30px; width: 30px; margin: 0px auto; }
+.main { width: 980px; margin: 0px auto; }
+.app-side-box { top: -22px; width: 164px; text-align: center; }
+.app-side-box .app-show { background: url('../images/jp-app-128.png') no-repeat scroll 0% 0% transparent; height: 128px; width: 128px; margin: 17px auto 0px; }
+.app-side-box .app-txt { font-size: 14px; color: rgb(248, 40, 92); }
+.tag_remind { position: fixed; bottom: 10px; left: 50%; margin-left: 385px; border: 1px solid rgb(248, 40, 92); background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 20px 0px; width: 214px; height: 86px; z-index: 100; text-align: center; }
+.tag_remind .tips { color: rgb(51, 51, 51); font-weight: bold; font-size: 14px; }
+.tag_remind .txt { color: rgb(153, 153, 153); margin: 10px 0px; }
+.tag_remind .btn_all a { color: rgb(255, 255, 255); width: 78px; height: 24px; line-height: 24px; border: 1px solid rgb(220, 1, 56); background: none repeat scroll 0% 0% rgb(255, 45, 94); display: inline-block; text-align: center; border-radius: 3px; }
+.tag_remind .btn_all a:hover { background: none repeat scroll 0% 0% rgb(255, 81, 125); text-decoration: none; }
+.tag_remind .del { display: block; position: absolute; top: 5px; right: 5px; font-size: 16px; color: rgb(204, 204, 204); width: 10px; height: 10px; line-height: 10px; }
+.tag_remind .del:hover { color: rgb(255, 45, 94); text-decoration: none; }
+.foot { position: relative; margin: 40px auto 0px; background: none repeat scroll 0% 0% rgb(249, 249, 249); z-index: 100; border-top: 1px solid rgb(206, 0, 63); clear: both; }
+.foot .white_bg { border-top: 3px solid rgb(248, 40, 92); }
+.foot-con { width: 880px; padding: 0px 50px 30px; margin: 0px auto; }
+.con-box-n { padding-top: 25px; margin: 0px auto; }
+.con-left-info { padding-left: 65px; width: auto; overflow: hidden; }
+.con-left-info dl { float: left; display: inline; width: 150px; }
+.con-left-info dt { font-size: 14px; color: rgb(51, 51, 51); font-weight: bold; margin-bottom: 10px; padding-left: 7px; }
+.con-left-info dd { margin-bottom: 5px; color: rgb(102, 102, 102); }
+.con-left-info dl a { color: rgb(102, 102, 102); }
+.con-left-info dl .revEmail { padding-left: 10px; line-height: 28px; }
+.con-left-info dd i { width: 4px; height: 4px; overflow: hidden; border-radius: 50%; background: none repeat scroll 0% 0% rgb(198, 198, 198); display: inline-block; margin-right: 5px; float: left; margin-top: 8px; }
+.con-left-info .help-info { width: 100px; }
+.con-menu { margin-top: 35px; }
+.con-menu a { display: block; width: 86px; height: 35px; background: url('../images/service_add.gif') no-repeat scroll 0% 0% transparent; }
+.con-menu .service-add { background-position: 0px -5px; }
+.con-menu .service-add:hover { background-position: 0px -52px; }
+.con-menu .service-time { padding-left: 10px; width: 65px; }
+.con-menu .service-time p { color: rgb(145, 145, 145); line-height: 18px; }
+.foot-con .ft-company { text-align: center; padding-top: 20px; color: rgb(198, 198, 198); }
+.foot-con .ft-company a { color: rgb(198, 198, 198); }
+.foot-con .ft-company a:hover { text-decoration: underline; }
+.foot-con .app-side-box { width: 90px; }
+.foot-con .app-side-box .app-show { background: url('../images/jp-app-90.png') no-repeat scroll 0% 0% transparent; height: 90px; width: 90px; margin-top: 5px; }
+.foot-con .app-side-box .app-txt { font-size: 12px; margin: 10px 0px; }
+.con-left-info .school { position: relative; }
+.con-left-info .school em { position: absolute; left: 63px; top: 3px; display: block; width: 14px; height: 14px; background: url('../images/school-ico.png') no-repeat scroll 0% 0% transparent; }
+.w1200 #toolbar .bar-con .topNav li a { padding: 0px 25px; }
+.w1200 .header .protection { right: 290px; }
+.w1200 .header.header-myjp .protection { right: 0px; }
+.w1200 .header .area { width: 1200px; }
+.w1200 .header .mainNav .nav { width: 1200px; }
+.w1200 #toolbar .bar-con { width: 1200px; }
+.w1200 .main { width: 1200px; }
+.w1200 .foot-con { width: 1100px; }
+.w1200 .con-left-info dl { width: 200px; }
+.w1200 .con-left-info .help-info { width: 100px; }
+.w1200 body { min-width: 1240px; }
+#alert_confirm .alert_content ul li::after { clear: both; content: "."; display: block; height: 0px; visibility: hidden; }
+
+body { background: none repeat scroll 0% 0% rgb(246, 246, 246); }
+.orders .no-order { background: url('../images/order_bg.jpg') no-repeat scroll 0% 0% transparent; width: 980px; padding: 20px 0px; margin: 0px auto; height: 500px; overflow: hidden; position: relative; }
+.orders .no-order .txt { font-size: 14px; font-family: "微软雅黑","宋体"; position: absolute; top: 90px; right: 48px; width: 515px; text-align: left; line-height: 32px; color: rgb(102, 102, 102); }
+.orders .no-order .txt .tips { font-size: 20px; font-weight: bold; margin-left: -9px; margin-bottom: 40px; padding-top: 26px; color: rgb(51, 51, 51); }
+.orders .no-order .txt a { color: rgb(2, 137, 205); text-decoration: underline; }
+.orders .no-order .txt a:hover { text-decoration: none; }
+.normal-box { border: 1px solid rgb(226, 226, 226); margin-bottom: 20px; background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+.code-box .code-list .list li::after { clear: both; content: "."; display: block; height: 0px; visibility: hidden; }
+.panel-box li::after { clear: both; content: "."; display: block; height: 0px; visibility: hidden; }
+.panel-box li::after { clear: both; content: "."; display: block; height: 0px; visibility: hidden; }
+.my-order-list:nth-child(0) { padding-top: 20px; }
+.order_t { margin-left: 10px; }
+
+.my-juanpi { width: 980px; }
+.w1200 .my-juanpi { width: 1200px; }
+.my-juanpi .sider-bar { width: 150px; border: 1px solid rgb(226, 226, 226); padding: 12px 27px 47px; float: left; background-color: rgb(255, 255, 255); }
+.my-juanpi .sider-bar ul li { height: 30px; padding: 12px 0px 12px 27px; font-weight: bold; font-size: 14px; width: 123px; line-height: 30px; font-family: "宋体"; border-bottom: 1px dashed rgb(226, 226, 226); }
+.my-juanpi .sider-bar ul li a { color: rgb(51, 51, 51); text-decoration: none; }
+.my-juanpi .sider-bar ul li.sub-menu { padding: 0px 0px 10px; height: auto; width: 150px; }
+.my-juanpi .sider-bar ul li.sub-menu span { color: rgb(255, 51, 102); font-weight: bold; padding-left: 5px; }
+.my-juanpi .sider-bar ul li ul li a { color: rgb(102, 102, 102); }
+.my-juanpi .sider-bar ul li a:hover { color: rgb(255, 51, 102); }
+.my-juanpi .sider-bar ul li ul li { font-weight: normal; color: rgb(102, 102, 102); font-size: 12px; border-bottom: medium none; padding-top: 0px; padding-bottom: 0px; overflow: hidden; margin: 2px 0px 8px 12px; }
+.my-juanpi .sider-bar ul li.noboder { border: medium none; }
+.my-juanpi .order-lists { width: 980px; overflow: hidden; }
+.my-juanpi .order-lists, .all-orders-top a { float: right; }
+.my-juanpi .order-lists .all-orders { margin-bottom: 20px; width: 978px; }
+.all-orders-top { height: 40px; line-height: 40px; }
+.all-orders-top span { float: left; color: rgb(153, 153, 153); }
+.all-orders-top span strong { font-size: 14px; font-weight: bold; padding-right: 10px; color: rgb(51, 51, 51); }
+.all-orders-top a { display: inline-block; margin-right: 20px; color: rgb(51, 153, 204); }
+.my-juanpi .info-panel { float: right; border-top: 1px solid rgb(226, 226, 226); border-left: 1px solid rgb(226, 226, 226); width: 979px; background-color: rgb(255, 255, 255); }
+.my-juanpi .info-panel .account { width: 456px; height: 89px; border-right: 1px solid rgb(226, 226, 226); border-bottom: 1px solid rgb(226, 226, 226); float: left; padding: 30px 0px 30px 40px; }
+.my-juanpi .account-info { float: left; margin: 10px 0px 0px 20px; }
+.my-juanpi .info-panel ul li { float: left; border-right: 1px solid rgb(226, 226, 226); border-bottom: 1px solid rgb(226, 226, 226); height: 74px; width: 240px; }
+.my-juanpi .info-panel ul li div, .tips em div, .float-siderbar a span, .my-juanpi .info-panel .msg-num span { background: url('../images/panel-icon.gif') no-repeat scroll 0% 0% transparent; }
+.my-juanpi .info-panel ul li .credit { height: 34px; line-height: 34px; background-position: 0px -47px; padding-left: 45px; margin: 22px 0px 0px 43px; font-family: arial,"宋体"; }
+.my-juanpi .info-panel ul li .ticket { height: 34px; line-height: 34px; background-position: 0px -81px; padding-left: 45px; margin: 22px 0px 0px 43px; }
+.my-juanpi .info-panel ul li .ticket a { font-family: arial,"宋体"; }
+.my-juanpi .info-panel ul li .base-info { height: 14px; line-height: 14px; background-position: 0px -188px; padding-left: 28px; margin: 27px 0px 0px 70px; }
+.my-juanpi .info-panel ul li .base-info a { color: rgb(102, 102, 102); font-size: 14px; font-weight: bold; }
+.my-juanpi .info-panel ul li .addr { height: 16px; line-height: 16px; background-position: 0px -202px; padding-left: 22px; margin: 27px 0px 0px 70px; }
+.my-juanpi .info-panel ul li .addr a { color: rgb(102, 102, 102); font-size: 14px; font-weight: bold; }
+.my-juanpi .info-panel ul li .base-info a:hover, .my-juanpi .info-panel ul li .addr a:hover { text-decoration: none; color: rgb(255, 51, 102); }
+.my-juanpi .ph { width: 86px; height: 86px; position: relative; float: left; }
+.my-juanpi .ph img { width: 86px; height: 86px; }
+.my-juanpi .ph-layer { background: url('../images/ph-layer.gif') no-repeat scroll 0px 0px transparent; width: 86px; height: 91px; position: absolute; top: 0px; left: 0px; }
+.my-juanpi .ph-set { position: absolute; top: 69px; left: 71px; background: url('../images/zh_1.gif') no-repeat scroll -138px -21px transparent; width: 20px; height: 20px; }
+.my-juanpi .ph-set:hover { background-position: -159px -21px; }
+.account-info p { font-size: 16px; font-weight: bold; color: rgb(51, 51, 51); margin-bottom: 20px; }
+.account-info p span { font-size: 14px; color: rgb(102, 102, 102); font-weight: normal; }
+.my-juanpi .tips a { display: inline-block; vertical-align: top; }
+.tips { font-family: "宋体"; }
+.tips strong { margin-left: -5px; background: url('../images/tips-icon.gif') no-repeat scroll 0% 0% transparent; display: inline-block; width: 32px; }
+.tips strong.level-l { color: rgb(255, 56, 56); background-position: 16px -104px; }
+.account-info a { color: rgb(51, 153, 204); }
+.tips em { display: inline-block; }
+.tips em:hover { cursor: pointer; }
+.tips em .mobile { background-position: 0px -30px; width: 15px; height: 16px; }
+.tips em .mail { background-position: -18px -30px; width: 16px; height: 15px; }
+.tips em .lock { background-position: -42px -30px; width: 18px; height: 16px; }
+.tips em.active .lock { background-position: -34px -14px; }

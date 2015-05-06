@@ -1,0 +1,359 @@
+.foot {
+    position: relative;
+    margin: 40px auto 0px;
+    background: none repeat scroll 0% 0% rgb(249, 249, 249);
+    z-index: 100;
+    border-top: 1px solid rgb(206, 0, 63);
+    clear: both;
+}
+.foot .white_bg {
+    border-top: 3px solid rgb(248, 40, 92);
+}
+.foot .links {
+    height: 20px;
+    padding: 10px 0px;
+    border-bottom: 1px dotted rgb(204, 204, 204);
+    color: rgb(153, 153, 153);
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0px auto;
+}
+.foot .links span {
+    display: block;
+    overflow: hidden;
+    float: left;
+}
+.foot .links .links_list_box {
+    float: left;
+    width: 760px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.foot .links .links_list_box a {
+    margin-left: 10px;
+    float: left;
+    margin-bottom: 10px;
+}
+.foot .links .links_list {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.foot .links .links_list li {
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5px;
+}
+.foot .links .more {
+    float: right;
+    color: rgb(153, 153, 153);
+}
+.foot .links a.more:hover {
+    color: rgb(2, 137, 205);
+}
+.foot .links a {
+    color: rgb(153, 153, 153);
+}
+.foot .links .links_list li a {
+    margin-right: 10px;
+}
+.foot .links .links_list li a:hover {
+    text-decoration: underline;
+}
+.foot .logo {
+    color: rgb(153, 153, 153);
+    text-align: center;
+    padding-top: 10px;
+}
+.foot .logo img {
+    margin-right: 27px;
+}
+.foot-con {
+    width: 880px;
+    padding: 0px 50px 30px;
+    margin: 0px auto;
+}
+.con-box-n {
+    padding-top: 25px;
+    margin: 0px auto;
+}
+.con-left-info {
+    padding-left: 65px;
+    width: auto;
+    overflow: hidden;
+}
+.con-left-info dl {
+    float: left;
+    display: inline;
+    width: 150px;
+}
+.con-left-info dt {
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 7px;
+}
+.con-left-info dd {
+    margin-bottom: 5px;
+    color: rgb(102, 102, 102);
+}
+.con-left-info dl a {
+    color: rgb(102, 102, 102);
+}
+.con-left-info dl .revEmail {
+    padding-left: 10px;
+    line-height: 28px;
+}
+.con-left-info dd i {
+    width: 4px;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% rgb(198, 198, 198);
+    display: inline-block;
+    margin-right: 5px;
+    float: left;
+    margin-top: 8px;
+}
+.con-left-info .help-info {
+    width: 100px;
+}
+.con-menu {
+    margin-top: 35px;
+}
+.con-menu a {
+    display: block;
+    width: 86px;
+    height: 35px;
+    background: url('../images/service_add.gif') no-repeat scroll 0% 0% transparent;
+}
+.con-menu .service-add {
+    background-position: 0px -5px;
+}
+.con-menu .service-add:hover {
+    background-position: 0px -52px;
+}
+.con-menu .service-time {
+    padding-left: 10px;
+    width: 65px;
+}
+.con-menu .service-time p {
+    color: rgb(145, 145, 145);
+    line-height: 18px;
+}
+.foot-con .ft-company {
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(198, 198, 198);
+}
+.foot-con .app-side-box {
+    width: 90px;
+}
+.foot-con .app-side-box .app-show {
+    background: url('../images/jp-app-90.png') no-repeat scroll 0% 0% transparent;
+    height: 90px;
+    width: 90px;
+    margin-top: 5px;
+}
+.foot-con .app-side-box .app-txt {
+    font-size: 12px;
+    margin: 10px 0px;
+}
+.con-left-info .school {
+    position: relative;
+}
+.con-left-info .school em {
+    position: absolute;
+    left: 63px;
+    top: 3px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url('../images/school-ico.png') no-repeat scroll 0% 0% transparent;
+}
+
+
+.side_right {
+    width: 40px;
+    left: 50%;
+    bottom: 150px;
+    margin-left: 615px;
+    position: fixed;
+    display: none;
+    z-index: 102;
+    border: 4px solid rgb(241, 236, 237);
+    background-color: rgb(241, 236, 237);
+    border-radius: 4px;
+}
+.side_right .con {
+    position: relative;
+    height: 85px;
+}
+ .side_right .trigger {
+    background:url(../images/btn_side.png) no-repeat;
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin:0 0 4px;
+    color:#fff;
+    text-align:center;
+    position:relative;
+}
+.side_right .trigger:hover {
+    color:#fff;
+}
+.side_right .trigger .sicon {
+    display:block;
+    background:url(../images/icon-right.gif) no-repeat;
+    height:40px;
+    width:40px;
+}
+.side_right .trigger .sicon-01 {
+    background-position:10px -36px;
+}
+.side_right .trigger .sicon-02 {
+    background-position:10px -80px
+}
+.side_right .trigger .sicon-03 {
+    background-position:10px -122px;
+}
+.side_right .trigger .sicon-04 {
+    background-position:0 -142px;
+}
+.side_right .trigger .sicon-05 {
+    background-position:10px 6px;
+}
+.side_right .trigger .sicon-06 {
+    background-position:10px -162px;
+}
+.side_right .trigger .sicon-07 {
+    background-position:10px -208px;
+}
+.side_right .trigger p {
+    display:none;
+    padding-top:3px;
+    line-height:16px;
+}
+.side_right .trigger:hover {
+    background-position:right top;
+    text-decoration:none;
+}
+.side_right .trigger:hover p {
+    display:block;
+}
+.side_right .trigger:hover span {
+    display:none;
+}
+.side_right .trigger.tag em.num {
+    width:auto;
+    height:12px;
+    line-height:12px;
+    padding:0 4px;
+    display:block;
+    position:absolute;
+    top:5px;
+    right:-2px;
+    background:#f8285c;
+    color:#f6f6f6;
+    text-align:center;
+    border-radius:15px;
+    font-family:"宋体";
+}
+.side_right .trigger.tag em.time {
+    position:absolute;
+    top:-55px;
+    left:0;
+    width:36px;
+    height:66px;
+    line-height:36px;
+    color:#fff;
+    font-family:"arial";
+    font-size:14px;
+    background:url(../images/tag-time.png) no-repeat;
+    font-size:12px;
+}
+.page{margin-top:20px;}
+.page a{padding:5px 10px;}
+.page span.current{background:#ccc;padding:5px 15px;}
+@media (min-width: 1240px) {
+    #toolbar .bar-con .topNav li a {
+        padding:0 25px;
+    }
+    .header .protection {
+        right:290px;
+    }
+    .header.header-myjp .protection {
+        right:0;
+    }
+    .totop-tips p {
+        width:1200px;
+    }
+    .header .area {
+        width:1200px;
+    }
+    .header .mainNav .nav {
+        width:1200px;
+    }
+    #toolbar .bar-con {
+        width:1200px;
+    }
+    .subNav {
+        width:1200px;
+    }
+    
+    .banner_r {
+        display:block;
+    }
+    .top_bar .banner li {
+        padding-left:0;
+    }
+    .top_bar .banner .pic {
+        width:720px;
+    }
+    .banner_arrow .arrow_next {
+        right:241px;
+    }
+    .top_wrap .round {
+        margin-right:-100px;
+    }
+   
+    .advance-nav {
+        width:1200px;
+    }
+    .main .on-brand {
+        width:1200px;
+        height:240px;
+        overflow:hidden;
+    }
+    .foot-con {
+        width:1100px;
+    }
+    .con-left-info dl {
+        width:200px;
+    }
+    .con-left-info .help-info {
+        width:100px;
+    }
+    .foot .links .links_list_box {
+        width:970px;
+    }
+    .top_wrap {
+        width:1200px;
+    }
+    body {
+        min-width:1240px;
+    }
+    .new-users {
+        width:1180px;
+    }
+    .new-users ul li {
+        margin-left:60px;
+    }
+    .new-users .update-time {
+        margin-right:35px;
+    }
+}

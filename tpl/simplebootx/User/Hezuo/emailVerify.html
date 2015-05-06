@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>商家帐户 - 商家中心 - {$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}">
+<meta name="description" content="{$site_seo_description}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="__TMPL__Public/css/home.css" />
+<tc_include file="Public:common" />
+</head>
+<body>
+<div class="header">
+    <div class="area">
+        <div class="logo">
+            <div class="fl"><a class="juan-logo fl" href="/" title="首页"></a><a href="/"><span class="juan-busi fl"></span></a></div>
+        </div>
+        <div class="busi_login fr"><p class="y_login" style="display:block;"><span class="user_img"><img width="26" height="26" src="__TMPL__Public/images/default.jpg_80x80.jpg"></span>您好!<strong>{$user.user_nicename}</strong><a class="out" href="{:U('user/index/logout')}">退出</a></p></div>
+    </div>
+</div>
+
+
+<div class="busi_nav">
+    <div class="m_nav">
+        <ul class="enr_nav fl">
+            <li><a href="{:U('hezuo/index')}">商品报名</a></li>
+            <li><a href="{:U('hezuo/goods')}">商品管理</a></li>
+        </ul>
+        <ul class="my_zhuanghu fr">
+            <li><a href="{:U('user/hezuo/home')}" class="active">我的账户管理</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main mt20 clear">
+	<div class="my_zh_l fl">
+        <dl>
+        <dt><span>我的账户管理</span></dt>
+        <dd><a href="{:U('user/hezuo/home')}"><i class="s1"></i>我的账户信息<i class="s2"></i></a></dd>
+        <dd><a href="{:U('user/hezuo/userAuth')}"><i class="s1"></i>商家身份认证<i class="s2"></i></a></dd>
+        <dd><a href="{:U('user/hezuo/mobileVerify')}"><i class="s1"></i>认证手机<i class="s2"></i></a></dd>
+        <dd><a href="{:U('user/hezuo/emailVerify')}" class="active"><i class="s1"></i>认证邮箱<i class="s2"></i></a></dd>
+        </dl>
+	</div>
+	<div class="m-account fl">
+  <div class="regists-information fund-information fund-info pb0 fl">
+        <h3>邮箱认证</h3>  
+        </div>
+
+
+            
+<div class="goods-message clear ">
+<div class="message-box message-box-dianpu">
+<form action="{:U('User/hezuo/otherVerify')}" method="post">
+<input type="hidden" name="way" value="email" />
+      <ul>
+         
+      <li> 
+          <label for="">邮箱：</label> 
+          <span> 
+              <input type="text" class="txt txt-05" id="bi_shop_name" name="target" value="{$email}">
+              <input type="button" value="获取验证码" id="getVerifyCode" />
+          </span>
+      </li>
+      <li> 
+          <label for="">验证码：</label> 
+          <span> 
+              <input type="text" class="txt txt-05" id="present" name="verifyCode" value="">
+          </span>
+      </li>
+       <li><input class="sub sub01 mt20" type="submit" name="submit" value="提交"/></li>
+        </ul>
+        <script>
+    	$(function(){
+			$('#getVerifyCode').click(function(){
+				way = 'email';
+				target=$(this).prev().val();
+				getVerifyCode(way,target)
+			});
+		})
+		function getVerifyCode(way,target){
+			$.post('{:U("User/hezuo/getVerifyCode")}',{way:way,target:target},function(data){
+				alert(data.info); 
+			},"JSON");
+		}
+    </script>
+</div>
+</div>
+</div>
+</div>
+<tc_include file="Public:footer" />
+</body></html>

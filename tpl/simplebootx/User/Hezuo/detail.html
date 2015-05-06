@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>商家中心,淘宝卖家活动报名入口 - {$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}">
+<meta name="description" content="{$site_seo_description}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="__TMPL__Public/css/hezuo.css" />
+<link type="text/css" rel="stylesheet" href="__TMPL__Public/css/detail.css" />
+<tc_include file="Public:common" />
+
+</head>
+<body>
+
+<div class="header">
+    <div class="area">
+        <div class="logo">
+            <div class="fl"><a class="juan-logo fl" href="/"></a><a href="{:leuu('user/hezuo/index')}"><span class="juan-busi fl"></span></a></div>
+        </div>
+        <div class="busi_login fr"><p class="y_login" style="display:block;"><span class="user_img"><img width="26" height="26" src="__TMPL__Public/images/default.jpg_80x80.jpg"></span>您好!<strong>{$user.user_nicename}</strong><a class="out" href="{:U('user/index/logout')}">退出</a></p></div>
+    </div>
+</div>
+
+
+<div class="busi_nav">
+  <div class="m_nav">
+    <ul class="enr_nav fl">
+      <li><a class="active" href="{:U('hezuo/index')}">商品报名</a></li>
+      <li><a href="{:U('hezuo/goods')}">商品管理</a></li>
+    </ul>
+    <ul class="my_zhuanghu fr">
+      <li><a href="{:U('user/hezuo/home')}">我的账户管理</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="main mt20 clear">
+  <div class="busi_info">
+
+  <div class="info_show">
+      <div class="info_zhe mb20">
+        <h3>{$detail.cateName}</h3>
+        <div class="info_bg clear">
+          <div class="box_l box_2 fl">
+            <span class="clear"><h4 class="title fl">活动介绍</h4></span>
+            <div class="mb20">{$detail.intro}</div>
+            <span class="clear"><h4 class="title fl">店铺要求</h4></span>
+            <div class="mb20">{$detail.shopConditions}</div>
+            <span class="clear"><h4 class="title fl">价格要求</h4></span>
+            <div class="mb20">{$detail.priceConditions}</div>
+          </div>
+
+          <div class="not_btn box_r box_s fl">
+            <span><h4 class="title">活动时间</h4></span>
+              {$detail.aboutTime}
+          </div>
+        </div>
+      </div>
+
+      <div class="info_zhe mb20">
+        <h3>商家报名条件</h3>
+        <div class="info_bg clear">
+          <div class="busi_table">
+          {$detail.applyConditions}
+          <a class="sub sub01" href="{:U('hezuo/apply',array('id'=>$detail['id']))}">报名商品</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+<tc_include file="Public:footer" />
+</body></html>

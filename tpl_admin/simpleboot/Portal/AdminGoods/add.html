@@ -1,0 +1,437 @@
+<admintpl file="header" />
+<style type="text/css">
+.col-auto {
+    overflow: hidden;
+    _zoom: 1;
+    _float: left;
+    border: 1px solid #c2d1d8;
+}
+.col-right {
+    float: right;
+    width: 210px;
+    overflow: hidden;
+    margin-left: 6px;
+    border: 1px solid #c2d1d8;
+}
+body fieldset {
+    border: 1px solid #D8D8D8;
+    padding: 10px;
+    background-color: #FFF;
+}
+body fieldset legend {
+    background-color: #F9F9F9;
+    border: 1px solid #D8D8D8;
+    font-weight: 700;
+    padding: 3px 8px;
+}
+.list-dot {
+    padding-bottom:10px
+}
+.list-dot li, .list-dot-othors li {
+    padding:5px 0;
+    border-bottom:1px dotted #c6dde0;
+    font-family:"宋体";
+    color:#bbb;
+    position:relative;
+    _height:22px
+}
+.list-dot li span, .list-dot-othors li span {
+    color:#004499
+}
+.list-dot li a.close span, .list-dot-othors li a.close span {
+    display:none
+}
+.list-dot li a.close, .list-dot-othors li a.close {
+    background: url("__ROOT__/statics/images/cross.png") no-repeat left 3px;
+    display:block;
+    width:16px;
+    height:16px;
+    position: absolute;
+    outline:none;
+    right:5px;
+    bottom:5px
+}
+.list-dot li a.close:hover, .list-dot-othors li a.close:hover {
+    background-position: left -46px
+}
+.list-dot-othors li {
+    float:left;
+    width:24%;
+    overflow:hidden;
+}
+</style>
+</head>
+
+<body class="J_scroll_fixed">
+    <div class="wrap J_check_wrap">
+        <ul class="nav nav-tabs">
+            <li><a href="{:U('admin_goods/index')}">所有商品</a>
+            </li>
+            <li><a href="{:U('admin_goods/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">添加商品</a>
+            </li>
+            <li class="active"><a href="#">商品添加</a>
+            </li>
+        </ul>
+        <form name="myform" id="myform" action="{:u('AdminGoods/add_goods')}" method="post" class="form-horizontal J_ajaxForms" enctype="multipart/form-data">
+            <input type="hidden" name="goods[goods_id]" value="{$goods.goods_id}">
+            <div class="col-auto">
+                <div class="table_full">
+                    <table width="100%" cellpadding="2" cellspacing="2">
+                        <tr>
+                            <th width="120">栏目</th>
+                            <td>
+                                <select name="term[term_id]" class="normal_select">
+                                    {$taxonomys}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">商品链接地址</th>
+                            <td>
+                                <input type="text" style="width:600px;" name="goods[goods_url]" id="goods_url" required class="input input_hd J_title_color" placeholder="请输入商品链接" />
+                                <input type="button" onclick="newscaiji();" class="button" value="获取商品信息">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">宝贝标题</th>
+                            <td>
+                                <input type="text" style="width:400px;" name="goods[goods_name]" id="goods_name" required class="input input_hd J_title_color" placeholder="请输入宝贝标题" onkeyup="strlen_verify(this, 'title_len', 800)" />
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">卖家名称</th>
+                            <td>
+                                <input type="text" style="width:400px;" name="goods[seller_name]" id="seller_name" required class="input input_hd J_title_color" placeholder="请输入卖家名称" onkeyup="strlen_verify(this, 'title_len', 160)" />
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">SEO标题</th>
+                            <td>
+                                <input type="text" style="width:400px;" name="goods[seo_title]" id="seo_title" required class="input input_hd J_title_color" placeholder="请输入SEO标题" onkeyup="strlen_verify(this, 'title_len', 160)" />
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">SEO关键字</th>
+                            <td>
+                                <input type="text" style="width:70%;" name="goods[seo_keywords]" id="seo_keywords" required class="input input_hd J_title_color" placeholder="请输入SEO关键字" onkeyup="strlen_verify(this, 'title_len', 300)" />
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">SEO内容</th>
+                            <td>
+                                <input type="text" style="width:90%" name="goods[seo_description]" id="seo_description" required class="input input_hd J_title_color" placeholder="请输入卖家名称" onkeyup="strlen_verify(this, 'title_len', 900)" />
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">卖家信誉</th>
+                            <td>
+                                <select name="goods[seller_credit]">
+                                    <option value="22" <eq name="goods.seller_credit" value="22">selected</eq>>品牌直销</option>
+                                    <option value="21" <eq name="goods.seller_credit" value="21">selected</eq>>天猫商家</option>
+                                    <option value="20" <eq name="goods.seller_credit" value="20">selected</eq>>黄皇冠五级</option>
+                                    <option value="19" <eq name="goods.seller_credit" value="19">selected</eq>>黄皇冠四级</option>
+                                    <option value="18" <eq name="goods.seller_credit" value="18">selected</eq>>黄皇冠三级</option>
+                                    <option value="17" <eq name="goods.seller_credit" value="17">selected</eq>>黄皇冠二级</option>
+                                    <option value="16" <eq name="goods.seller_credit" value="16">selected</eq>>黄皇冠一级</option>
+                                    <option value="15" <eq name="goods.seller_credit" value="15">selected</eq>>蓝皇冠五级</option>
+                                    <option value="14" <eq name="goods.seller_credit" value="14">selected</eq>>蓝皇冠四级</option>
+                                    <option value="13" <eq name="goods.seller_credit" value="13">selected</eq>>蓝皇冠三级</option>
+                                    <option value="12" <eq name="goods.seller_credit" value="12">selected</eq>>蓝皇冠二级</option>
+                                    <option value="11" <eq name="goods.seller_credit" value="11">selected</eq>>蓝皇冠一级</option>
+                                    <option value="10" <eq name="goods.seller_credit" value="10">selected</eq>>钻石五级</option>
+                                    <option value="9" <eq name="goods.seller_credit" value="9">selected</eq>>钻石四级</option>
+                                    <option value="8" <eq name="goods.seller_credit" value="8">selected</eq>>钻石三级</option>
+                                    <option value="7" <eq name="goods.seller_credit" value="7">selected</eq>>钻石二级</option>
+                                    <option value="6" <eq name="goods.seller_credit" value="6">selected</eq>>钻石一级</option>
+                                    <option value="5" <eq name="goods.seller_credit" value="5">selected</eq>>红心五级</option>
+                                    <option value="4" <eq name="goods.seller_credit" value="4">selected</eq>>红心四级</option>
+                                    <option value="3" <eq name="goods.seller_credit" value="3">selected</eq>>红心三级</option>
+                                    <option value="2" <eq name="goods.seller_credit" value="2">selected</eq>>红心二级</option>
+                                    <option value="1" <eq name="goods.seller_credit" value="1">selected</eq>>红心一级</option>
+                                </select>
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">商品类型</th>
+                            <td>
+                                <select id="goods_type" name="goods[goods_type]">
+                                    <option value="tmall">天猫</option>
+                                    <option value="taobao">淘宝</option>
+                                </select>
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">宝贝价格</th>
+                            <td>
+                                <input type="text" style="width:400px;" name="goods[goods_price]" id="goods_price" required class="input input_hd J_title_color" placeholder="请输入宝贝价格" />
+                                <span class="must_red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">宝贝推广链接</th>
+                            <td>
+                                <input type="text" style="width:90%" name="goods[click_url]" id="click_url" class="input input_hd J_title_color" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">已售数</th>
+                            <td>
+                                <input type="text" style="width:30%" name="goods[total_num]" id="total_num" class="input input_hd J_title_color" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">内容</th>
+                            <td>
+                                <div id='content_tip'></div>
+                                <script type="text/plain" id="content" name="goods[goods_body]">
+                                {$goods.goods_body}
+                                </script>
+                                <script type="text/javascript">
+                                //编辑器路径定义
+                                var editorURL = GV.DIMAUB;
+                                </script>
+                                <script type="text/javascript" src="__ROOT__/statics/js/ueditor/ueditor.config.js"></script>
+                                <script type="text/javascript" src="__ROOT__/statics/js/ueditor/ueditor.all.min.js"></script>
+                                <script type="text/javascript">
+                                var editorcontent;
+                                UE.commands['attachments'] = {
+                                    execCommand: function(cmd) {
+                                        flashupload('flashupload', '附件上传', 'content', ueAttachment, '10,,1,,,0', 'Contents', '12', 'd909680d11bb7090136c35b9b9d4e66d');
+                                    },
+                                    queryCommandState: function() {
+                                        return this.highlight ? -1 : 0;
+                                    }
+                                };
+                                </script>
+                                <style type="text/css">
+                                .content_attr {
+                                    border: 1px solid #CCC;
+                                    padding: 5px 8px;
+                                    background: #FFC;
+                                    margin-top: 6px
+                                }
+                                </style>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">缩略图</th>
+                            <td>
+                                <div>
+                                    <input type='hidden' name='goods[pic_url]' id='thumb' value="{$goods.pic_url|default=''}">
+                                    <a href='javascript:void(0);' onclick="flashupload('thumb_images', '附件上传','thumb',thumb_images,'1,jpg|jpeg|gif|png|bmp,1,,,1','','','');return false;">
+                                        <img src="__ROOT__/statics/images/icon/upload-pic.png" id='thumb_preview' width='135' height='113' style='cursor:hand' />
+                                    </a>
+                                    <input type="button" class="btn" onclick="$('#thumb_preview').attr('src','__ROOT__/statics/images/icon/upload-pic.png');$('#thumb').val('');return false;" value="取消图片">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">发布时间</th>
+                            <td>
+                                <input type="text" name="goods[add_time]" id="updatetime" size="21" class="input length_3 J_datetime " value="{:date('Y-m-d H:i:s',time())}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>状态</th>
+                            <td>
+                                <span class="switch_list cc">
+                                    <label>
+                                        <input type="radio" name="goods[goods_state]" value="1" checked>
+                                        <span>审核通过</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="goods[goods_state]" value="0">
+                                        <span>待审核</span>
+                                    </label>
+                                </span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn_submit J_ajax_submit_btn" type="submit">提交</button>
+                <a class="btn" href="{:U('AdminGoods/index')}">返回</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="__ROOT__/statics/js/common.js"></script>
+    <script type="text/javascript" src="__ROOT__/statics/js/content_addtop.js"></script>
+
+    <script language="javascript">
+    //表单采集
+
+    function newscaiji() {
+        $.get("{:U('Api/Caijiadmin/caiji_news')}", {
+            url: encodeURIComponent($("#goods_url").val())
+        }, function(data) {
+            $("#goods_name").val(data.title);
+            $("#goods_price").val(data.price);
+            $("#goods_type").val(data.type);
+            $("#seller_name").val(data.store_name);
+            $("#content_add_news_form_thumb_input").attr("src", data.img);
+            $("#thumb").val(data.img);
+            $("#thumb_preview").attr('src', data.img);
+            $("#seller_credit").val(data.seller_credit);
+            editorcontent.setContent(data.content);
+
+        }, "json");
+        return false;
+    }
+    $(function() {
+        $(".J_ajax_close_btn").on('click', function(e) {
+            e.preventDefault();
+            Wind.use("artDialog", function() {
+                art.dialog({
+                    id: "question",
+                    icon: "question",
+                    fixed: true,
+                    lock: true,
+                    background: "#CCCCCC",
+                    opacity: 0,
+                    content: "您确定需要关闭当前页面嘛？",
+                    ok: function() {
+                        setCookie("refersh_time", 1);
+                        window.close();
+                        return true;
+                    }
+                });
+            });
+        });
+        /////---------------------
+        Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+            //javascript
+
+            //编辑器
+            editorcontent = new baidu.editor.ui.Editor();
+            editorcontent.render('content');
+            try {
+                editorcontent.sync();
+            } catch (err) {};
+            //增加编辑器验证规则
+            jQuery.validator.addMethod('editorcontent', function() {
+                try {
+                    editorcontent.sync();
+                } catch (err) {};
+                return editorcontent.hasContents();
+            });
+            var form = $('form.J_ajaxForms');
+            //ie处理placeholder提交问题
+            if ($.browser.msie) {
+                form.find('[placeholder]').each(function() {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                    }
+                });
+            }
+            //表单验证开始
+            form.validate({
+                //是否在获取焦点时验证
+                onfocusout: false,
+                //是否在敲击键盘时验证
+                onkeyup: false,
+                //当鼠标掉级时验证
+                onclick: false,
+                //验证错误
+                showErrors: function(errorMap, errorArr) {
+                    //errorMap {'name':'错误信息'}
+                    //errorArr [{'message':'错误信息',element:({})}]
+                    try {
+                        $(errorArr[0].element).focus();
+                        art.dialog({
+                            id: 'error',
+                            icon: 'error',
+                            lock: true,
+                            fixed: true,
+                            background: "#CCCCCC",
+                            opacity: 0,
+                            content: errorArr[0].message,
+                            cancelVal: '确定',
+                            cancel: function() {
+                                $(errorArr[0].element).focus();
+                            }
+                        });
+                    } catch (err) {}
+                },
+                //验证规则
+                rules: {
+                    'goods[goods_name]': {
+                        required: 1
+                    },
+                    'goods[goods_body]': {
+                        editorcontent: true
+                    }
+                },
+                //验证未通过提示消息
+                messages: {
+                    'goods[goods_name]': {
+                        required: '请输入商品名称'
+                    },
+                    'goods[goods_body]': {
+                        editorcontent: '内容不能为空'
+                    }
+                },
+                //给未通过验证的元素加效果,闪烁等
+                highlight: false,
+                //是否在获取焦点时验证
+                onfocusout: false,
+                //验证通过，提交表单
+                submitHandler: function(forms) {
+                    $(forms).ajaxSubmit({
+                        url: form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+                        dataType: 'json',
+                        beforeSubmit: function(arr, $form, options) {
+
+                        },
+                        success: function(data, statusText, xhr, $form) {
+                            if (data.status) {
+                                setCookie("refersh_time", 1);
+                                //添加成功
+                                Wind.use("artDialog", function() {
+                                    art.dialog({
+                                        id: "succeed",
+                                        icon: "succeed",
+                                        fixed: true,
+                                        lock: true,
+                                        background: "#CCCCCC",
+                                        opacity: 0,
+                                        content: data.info,
+                                        button: [{
+                                            name: '继续添加？',
+                                            callback: function() {
+                                                reloadPage(window);
+                                                return true;
+                                            },
+                                            focus: true
+                                        }, {
+                                            name: '返回列表页',
+                                            callback: function() {
+                                                location = '{:U('AdminGoods/index')}';
+                                                return true;
+                                            }
+                                        }]
+                                    });
+                                });
+                            } else {
+                                isalert(data.info);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+        ////-------------------------
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>{$post_title} {$site_name} </title>
+        <meta name="keywords" content="{$post_keywords}" />
+        <meta name="description" content="{$post_excerpt}">
+        <tc_include file="Public:head" />
+        <style>
+            #article_content img{height:auto !important}
+        </style>
+        <link href="__TMPL__Public/css/about.css" rel="stylesheet" />
+    </head>
+<body>
+<tc_include file="Public:nav" />
+<div class="main">
+    <div class="piece about">
+        <div class="white_top">
+            <div class="white_top_left"></div>
+            <div class="white_top_middle"></div>
+            <div class="white_top_right"></div>
+        </div>
+        <div class="white_bg">
+            <!-- 导航 -->
+            <div class="about_menu">
+                <ul>
+                    <li class="about-one">
+                        <dl>
+                            <dt class="cur"><a href="/index.php/about/xiaocao">关于小草</a>
+                            </dt>
+                            <dd>
+                                <a href="/index.php/about/xiaocao">关于小草</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><a href="/index.php/about/partner">携手小草</a>
+                            </dt>
+                            <dd>
+                                <a href="/index.php/about/partner">商务合作</a>
+                            </dd>
+                            <dd>
+                                <a href="/index.php/about/links" class="active">友情链接<em class="right-icon"></em></a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><a target="_blank" href="/index.php/help/xiaobao">服务保障</a>
+                            </dt>
+                            <dd><a target="_blank" href="/index.php/help/xiaobao">消费保障</a>
+                            </dd>
+                            <dd><a rel="nofollow" href="/index.php/about/service">在线客服</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="last">
+                        <dt><a target="_blank" href="/index.php/help">帮助中心</a>
+                        </dt>
+                    </li>
+                    <li class="menu-bg"></li>
+                </ul>
+            </div>
+            <div class="about_contain">
+                <div class="about_tit"><em></em>友情链接 <font size="2px" color="#727272">友链合作QQ: 88482528</font></div>
+                <div class="about_line"></div>
+                <div class="about_link">
+                    <ul>
+                        <php>$links=sp_getlinks();</php>
+                        <foreach name="links" item="vo">
+                            <li><a href="{$vo.link_url}" target="{$vo.link_target}">{$vo.link_name}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="white_bottom">
+            <div class="white_bottom_left"></div>
+            <div class="white_bottom_middle"></div>
+            <div class="white_bottom_right"></div>
+        </div>
+    </div>
+</div>
+
+<tc_include file="Public:footer"/>
+<tc_include file="Public:scripts"/>
+</body>
+</html>

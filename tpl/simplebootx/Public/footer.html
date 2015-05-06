@@ -1,0 +1,95 @@
+<!-- 页脚 -->
+<div class="foot">
+    <div class="white_bg">
+        <div class="foot-con">
+            <div class="con-box-n clear">
+                <div class="app-side-box fl">
+                    <p class="app-show"></p>
+                    <p class="app-txt">关注小草淘宝客</p>
+                </div>
+                <div class="con-left-info fl">
+                    <dl class="update">
+                        <dt>获取更新</dt>
+                        <dd><a target="_blank" href="http://bbs.xiaocaocms.com/forum-37-1.html"><i></i>升级通知</a>
+                        </dd>
+                        <dd><a target="_blank" href="http://bbs.xiaocaocms.com/forum-2-1.html"><i></i>官方通知</a>
+                        </dd>
+                        <dd><a target="_blank" href="http://bbs.xiaocaocms.com/forum-38-1.html"><i></i>程序发布</a>
+                        </dd>
+                    </dl>
+                    <dl class="cooperation">
+                        <dt>商务合作</dt>
+                        <dd><a target="_blank" href="#"><i></i>卖家免费报名</a>
+                        </dd>
+                        <dd><a target="_blank" href="{:leuu('portal/page/index',array('id'=>15))}"><i></i>商务合作</a>
+                        </dd>
+                        <dd><a href="javascript:void(0)" onclick="if (window.confirm('本邮箱仅接收商务合作申请。')) { window.location = 'mailto:' + '{$site_options.site_admin_email}'.split('').reverse().join(''); }"><i></i>站长邮箱<br><span class="revEmail">{$site_options.site_admin_email}</span></a></dd>
+                    </dl>
+                    <dl class="cor-info">
+                        <dt>公司信息</dt>
+                        <dd><a target="_blank" href="{:leuu('portal/page/index',array('id'=>13))}"><i></i>关于小草</a>
+                        </dd>
+                        <dd><a target="_blank" href="{:leuu('portal/page/index',array('id'=>18))}"><i></i>用户协议</a>
+                        </dd>
+                    </dl>
+                    <dl class="help-info">
+                        <dt>帮助中心</dt>
+                        <dd><a target="_blank" href="http://bbs.xiaocaocms.com/forum-47-1.html"><i></i>新手上路</a>
+                        </dd>
+                        <dd><a target="_blank" href="#"><i></i>积分攻略</a>
+                        </dd>
+                        <dd><a target="_blank" href="#"><i></i>网站地图</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="con-menu fr">
+                    <a target="_blank" class="service-add fl" href="{:leuu('portal/page/index',array('id'=>17))}"></a>
+                    <span class="service-time fl">
+                        <p>周一至周六</p>
+                        <p>9:00-22:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </span>
+                </div>
+            </div>
+            <div class="links">
+                <span>友情链接：</span>
+                <div class="links_list_box">
+                    <ul style="margin-top: 0px;" class="links_list">
+                        <php>$links=sp_getlinks();</php>
+                        <foreach name="links" item="vo">
+                            <li><a href="{$vo.link_url}" target="{$vo.link_target}">{$vo.link_name}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+            <p class="ft-company">小草网络科技有限公司 苏ICP备xxxxxxxx号　　Copyright © 2008 -2015 XiaocaoCMS.com All Rights Reserved</p>
+            <div class="logo">
+                <a rel="nofollow" target="_top" href="#">
+                    <img src="__TMPL__Public/images/r_315online.gif" border="0">
+                </a>
+                <a rel="nofollow" target="_top" href="#">
+                    <img src="__TMPL__Public/images/r_cnnic.gif" border="0">
+                </a>
+                <a rel="nofollow" target="_top" key="5492626c3b05a3da0fbd05fe" logo_size="124x47" logo_type="realname" href="#">
+                    <span style="display: none;" class="LOGO_aq_jsonp_wrap_" id="AQ_logo_span_init_1">
+                        <script async="true" type="text/javascript" src="__TMPL__Public/images/untitled_002.dat"></script>
+                    </span>
+                    <img alt="安全联盟认证" style="border: medium none;" src="__TMPL__Public/images/sm_124x47.png" height="47" width="124">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display: none;" class="side_right fix">
+        <div class="con">
+            <a target="_blank" class="trigger " style="" href="/index.php/help/xiaobao">
+                <p>消费<br>
+                    保障</p>
+                <span><i class="sicon sicon-02"></i></span> </a>
+            <a class="trigger go-top" href="javascript:;">
+                <p>回到<br>
+                    顶部</p>
+                <span><i class="sicon sicon-03"></i></span> </a>
+    </div>
+</div>
+{$site_tongji}
+<!-- /页脚 -->

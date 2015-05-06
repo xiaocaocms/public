@@ -1,0 +1,219 @@
+<admintpl file="caijiheader"/>
+<link href="__ROOT__/statics/simpleboot/css/cookiescaiji.css" rel="stylesheet">
+</head>
+<body>
+<div  class="clearfix wrap">
+    <div  class="main">
+        <div  style="margin-left: 20px;" class="inmain" id="inmain">
+            <form class="J_ajaxForm" action="{:U('indexadmin/index')}" method="post" id="list_search">
+                <input type="hidden" id="cid" name="cid" value="{$search.cid}">
+                <input type="hidden" id="order" name="order" value="{$search.order}">
+                <input type="hidden" id="page" name="page" value="{$search.page}">
+                <div>
+                    <ul class="table-title table-title-extra clearfix">
+                        <li class="selected">
+                            <h2>
+                                <span>单品推广</span>
+                            </h2>
+                        </li>
+                    </ul>
+                    <div>
+                        <div class="self-search">
+                            <div class="bd clearfix">
+                                <div class="search-panel ks-combobox ks-combobox-shown">
+                                    <input id="q" name="q" placeholder="请输入你要搜索的单品名称或URL" autocomplete="off" type="text" value="{$list.data.keyword}" onkeypress="EnterPress(event)" onkeydown="EnterPress()" >
+                                </div> <a href="javascript:void($('#list_search').submit());" class="iconfont search-btn" href="#">ő</a> 
+                                <div class="plcaiji">采集页数：<input id="pages" name="pages" placeholder="请输入你要采集的页数,默认1页" autocomplete="off" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"><a href="javascript:void(0);" onclick="piliangcaiji()" class="btn btn-blue">批量采集</a></div>
+                            </div>
+                        </div>
+                        <vframe id="magix_vf_items_query">
+                            <div class="search-filter">
+                                <div  class="filter-panel filter-panel-fold">
+                                    <dl>
+                                        <dt>类目</dt>
+                                        <dd class="J_labelGroup">
+                                            <ul class="cat clearfix">
+                                                <li <if condition="empty($search['cid'])">class="selected"</if>><a onclick="goods_cat();">全部</a>
+                                                </li>
+                                                <foreach name="list['data']['qpResult']['navCats']" item="v">
+                                                <li <if condition="$search['cid'] eq $v['id']">class="selected"</if>>
+                                                    <a class="filter-item" type="button" onclick="goods_cat({$v.id});" >{$v.name}</a>
+                                                </li>
+                                                </foreach>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </vframe>
+                        <vframe id="magix_vf_items_list">
+                            <div style="padding-top: 0px;" class="table-container self-itemlist" id="J_item_list">
+                                <div style="position: static; width: auto; left: 0px; top: 0px;" class="table-head-fix">
+                                    <table class="table" bx-tmpl="sort" bx-datakey="list">
+                                        <thead>
+                                            <tr>
+                                                <th class="left">商品推广信息</th>
+                                                <th class="left" width="70">折扣</th>
+                                                <th class="left" width="70"><a href="javascript:void(0);" onclick="goods_order(this,'bid');">单价<i class="iconfont icon-sort">ŀ</i></a>
+                                                </th>
+                                                <th class="center" width="80"> <a href="javascript:void(0);" onclick="goods_order(this,'commrate');" class="">收入比率<i class="iconfont icon-sort">ŀ</i></a><i class="iconfont cursor-pointer fontsize-13 ml2" title="卖家佣金比率+平台补贴比率 [淘宝卖家和各平台愿意为推广商品而付出的商品单价的百分之几（比率=佣金/商品价格。由于商家/平台可能会对商品价格和佣金比率进行调整，实际推广过程中实际获取佣金可能会发生变化）">Ũ</i> 
+                                                </th>
+                                                <th class="center" width="70">佣金<i  class="iconfont cursor-pointer fontsize-13 ml2" title="淘宝卖家为淘宝客推广并成交而支付的报酬（佣金=商品成交价格*佣金比率，由于商家可能会对商品价格和佣金比率进行调整，实际推广过程中实际获取佣金可能会发生变化）。">Ũ</i> 
+                                                </th>
+                                                <th class="left" width="90"> <a href="javascript:void(0);" onclick="goods_order(this,'totalnum');"  class="">30天推广量<i class="iconfont icon-sort">ŀ</i></a><i class="iconfont cursor-pointer fontsize-13 ml2" title="淘宝卖家推广商品30天内的累计成交量。">Ũ</i> 
+                                                </th>
+                                                <th class="left" width="110"> <a href="javascript:void(0);" onclick="goods_order(this,'totalfee');"  class="">30天支出佣金<i class="iconfont icon-sort">ŀ</i></a><i  class="iconfont cursor-pointer fontsize-13 ml2" title="淘宝卖家推广商品30天内累计支出的佣金（30天支出佣金=佣金*30天推广量，注：由于淘宝卖家30天内可能会调整单价或佣金比率，所以按照上述公式计算最终得出的30天支出的佣金和实际列表中看到的可能会有些差异）。">Ũ</i> 
+                                                </th>
+                                                <th class="center" width="110">操作</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <table  class="table" bx-name="tables" bx-tmpl="list" bx-datakey="list">
+                                    <tbody>
+                                        <foreach name="list['data']['pagelist']" item="v">
+                                        <tr>
+                                            <td class="left">
+                                                <div class="list-group">
+                                                    <a href="{$v.auctionUrl}" class="img" target="_blank">
+                                                        <img src="{$v.pictUrl}_80x80.jpg" onerror="this.src='http://gtms01.alicdn.com/tps/i1/T1syqxFbNdXXczfNfo-80-80.gif'">
+                                                    </a>
+                                                    <ul class="attr">
+                                                        <li class="title">
+                                                            <if condition="!empty($v['zkType'])"><span class="color-red">[{$v.zkType}]</span></if> <a href="{$v.auctionUrl}" target="_blank">{$v.title}</a> 
+                                                        </li>
+                                                        <li class="seller">
+                                                            <span class="color-grey">掌柜：{$v.nick}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td class="left" width="70">{$v.zkRate}折</td>
+                                            <td class="left" width="70">￥{$v.zkPrice}</td>
+                                            <td class="center" width="80">
+                                                <span class="color-green">{$v.commissionRatePercent}%</span>
+                                            </td>
+                                            <td class="center" width="70">
+                                                <span class="green">￥{$v.calCommission}</span>
+                                            </td>
+                                            <td class="center" width="90">{$v.totalNum}件</td>
+                                            <td class="center" width="110">￥{$v.totalFee}</td>
+                                            <td class="center" width="110">
+                                                <div class="operation">
+                                                    <p><a class="btn btn-blue" href="javascript:void(0)" onclick="caiji(this)" item-json='<php>echo json_encode($v);</php>'>立即采集</a>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </foreach>
+                                    </tbody>
+                                </table>
+                                <div class="tfoot">
+                                    <div  class="pagination">
+                                        <div class="pagination-info">
+                                            <span>当前</span>
+                                            <div style="overflow:hidden;display:none;">{$list.data.paginator.beginIndex}</div>
+                                            <span class="b"><php>echo $list['data']['paginator']['beginIndex'];</php>-{$list.data.paginator.endIndex}</span>
+                                            <span>条</span>
+                                            <span class="mr">共</span>
+                                            <span class="b">{$list.data.paginator.items}</span>
+                                            <span>条</span>
+                                            <span class="mr">每页展现</span>
+                                            <div tabindex="0" class="dropdown">
+                                                <span class="dropdown-hd">
+                                                    <span class="dropdown-text" value="0">40</span>
+                                                </span>
+                                                <ul style="display: none;" class="dropdown-list dropdown-list-noicon">
+                                                    <li class="dropdown-item dropdown-itemselected">
+                                                        <span value="0">40</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <span>条</span>
+                                        </div>
+                                        <div class="pagination-pages">
+                                            <div class="pagination-page">
+                                                <if condition="($list['data']['paginator']['page'] gt 1)"><a class="page-prev" href="javascript:void(0);" onclick="goods_page(-1);"><i class="iconfont">Ɠ</i></a></if>
+                                                <span class="page-simply">{$list.data.paginator.page}/{$list.data.paginator.pages}</span><a title="下一页" href="javascript:void(0);" onclick="goods_page(1);" class="page-next"><i class="iconfont">ƒ</i></a>
+                                            </div>
+                                            <div class="pagination-count">
+                                                <span>共</span>
+                                                <span class="b">{$list.data.paginator.pages}</span>
+                                                <span>页</span>
+                                            </div>
+                                            <div class="pagination-form">
+                                                <span>向第</span>
+                                                <input class="page-num" value="{$list.data.paginator.page}" name="page_text" type="text">
+                                                <span>页</span><a href="javascript:void(0);" onclick="goods_page(0);" class="btn-jump btn btn-size25">跳转</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </vframe>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__ROOT__/statics/js/common.js"></script>
+<script type="text/javascript" src="__ROOT__/statics/js/content_addtop.js"></script>
+<script type="text/javascript">
+    function caiji (obj) {
+        var item=$(obj).attr('item-json');
+        $.post(
+            "{:U('indexadmin/caijixinxi')}",{
+                item:   item,
+            },function(data,state){
+                if(state == 'success'){
+                    if(data == 'success'){
+                        alert("采集成功");
+                    }
+                }else{
+                        alert("cookies失效，刷新页面重新填写");
+                }
+            }
+        )
+    }
+    function piliangcaiji() {
+        var q=$("#q").val();
+        var cid=$("#cid").val();
+        var order=$("#order").val();
+        var pages=$('#pages').val();
+        open_iframe_dialog('index.php?g=caiji&m=indexadmin&a=cookies_pl&q='+q+'&cid='+cid+'&order='+order+'&pages='+pages,'批量采集');
+    }
+    function goods_order(obj,str) {
+        var order = $('#order').val();
+        if(order.indexOf('_') < 0){
+            $('#order').val('_'+str);
+            $('#list_search').submit();
+        }else{
+            $('#order').val(str);
+            $('#list_search').submit();
+        }
+    }
+    function goods_cat(cid) {
+        $('#cid').val(cid);
+        $('#list_search').submit();
+    }
+    function goods_page (num) {
+        var page = parseInt($('#page').val());
+        var page_text=$('.page-num').val();
+        if(num != 0){
+            $('#page').val(page+num);
+            $('#list_search').submit();
+        }else{
+            $('#page').val(page_text);
+            $('#list_search').submit();
+        }
+    }
+    function EnterPress(e){
+        var e = e || window.event;
+        if(e.keyCode == 13){
+            $('#list_search').submit();
+        }
+    }
+</script>
+</body>
+</html>

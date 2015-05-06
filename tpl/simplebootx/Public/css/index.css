@@ -1,0 +1,246 @@
+.top_bar {
+    background-color: rgb(247, 247, 247);
+    height: 241px;
+    overflow: hidden;
+    width: 100%;
+}
+.top_bar .banner {
+    position: relative;
+    height: 241px;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+.top_bar .banner li {
+    padding-left: 220px;
+    display: block ! important;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+    opacity: 0;
+}
+.top_bar .banner .pic {
+    height: 241px;
+    display: block;
+    width: 940px;
+    margin: 0px auto;
+}
+.top_wrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+.top_wrap .top_box {
+    position: relative;
+    width: 100%;
+    height: 0px;
+}
+.top_wrap .banner_l {
+    position: relative;
+    top: -241px;
+    z-index: 10;
+    width: 240px;
+    display: block;
+}
+.top_wrap .banner_l dl {
+    width: 240px;
+    height: 241px;
+    overflow: hidden;
+    box-shadow: 0px -3px 2px rgba(102, 102, 102, 0.15);
+}
+.top_wrap .banner_l dl dd {
+    position: relative;
+    width: 240px;
+    height: 120px;
+    border-bottom: 1px solid rgb(222, 219, 213);
+    overflow: hidden;
+}
+.top_wrap .banner_l dl dd a {
+    display: block;
+    height: 120px;
+    width: 240px;
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+}
+.top_wrap .banner_l dl dd a img {
+    display: block;
+    height: 120px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 245px;
+    transition: all 0.3s ease 0s;
+}
+.top_wrap .banner_l dl dd a:hover img {
+    left: -5px;
+}
+.top_wrap .banner_l dl dd .txt {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 95px;
+}
+.top_wrap .banner_l dl dd .txt span {
+    display: block;
+    color: rgb(51, 51, 51);
+    white-space: nowrap;
+}
+.top_wrap .banner_l dl dd .txt span.title {
+    border-bottom: 1px solid rgb(51, 51, 51);
+    font-family:"微软雅黑", "宋体";
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.top_wrap .banner_l dl dd .txt.other span.title {
+    border-color: rgb(113, 12, 147);
+    color: rgb(113, 12, 147);
+}
+.top_wrap .banner_l dl dd .txt span em {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    display: inline-block;
+    background: none repeat scroll 0% 0% rgb(255, 51, 102);
+    padding: 0px 4px;
+    margin: 0px 2px;
+    border-radius: 10px;
+}
+.banner_arrow {
+    display: none;
+}
+.banner_arrow .arrow_prev, .banner_arrow .arrow_next {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    position: absolute;
+    top: -140px;
+    width: 29px;
+    z-index: 12;
+}
+.banner_arrow .arrow_prev {
+    left: 240px;
+}
+.banner_arrow .arrow_next {
+    right: 0px;
+}
+.banner_arrow .arrow_prev:hover, .banner_arrow .arrow_next:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.banner_arrow .arrow_prev i, .banner_arrow .arrow_next i {
+    background: url('../images/arrow.png') no-repeat scroll 0% 0% transparent;
+    cursor: pointer;
+    display: block;
+    height: 21px;
+    margin: 12px 0px 0px 9px;
+    overflow: hidden;
+    width: 13px;
+}
+.banner_arrow .arrow_prev i {
+    background-position: left top;
+}
+.banner_arrow .arrow_next i {
+    background-position: right top;
+}
+.top_wrap .banner_r {
+    display: none;
+    height: 241px;
+    position: absolute;
+    right: 0px;
+    top: -241px;
+    width: 241px;
+    z-index: 10;
+    background: none repeat scroll 0% 0% rgb(232, 232, 232);
+    box-shadow: 0px -3px 2px rgba(102, 102, 102, 0.15);
+}
+.top_wrap .banner_r dl {
+    width: 242px;
+    height: 241px;
+    overflow: hidden;
+}
+.top_wrap .banner_r dl dd {
+    float: left;
+    display: inline;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0px 1px 1px 0px;
+}
+.top_wrap .banner_r dl dd img {
+    width: 120px;
+}
+.top_wrap .banner_r dl dd a:hover {
+    opacity: 0.8;
+}
+.top_wrap .round {
+    position: absolute;
+    margin-right: -210px;
+    top: -25px;
+    width: 200px;
+    right: 50%;
+}
+.top_wrap .round .adType {
+    text-align: center;
+}
+.top_wrap .round .adType a {
+    background: none repeat scroll 0% 0% rgb(226, 226, 226);
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    margin-right: 7px;
+    width: 10px;
+    overflow: hidden;
+}
+.top_wrap .round .adType a.current {
+    background: none repeat scroll 0% 0% rgb(255, 45, 94);
+}
+.new-users {
+    width: 980px;
+    margin: 30px auto;
+}
+.new-users ul li {
+    display: inline;
+    float: left;
+    font-size: 16px;
+    font-family:"微软雅黑", "宋体";
+    margin-left: 25px;
+    line-height: 42px;
+}
+.new-users ul li i {
+    display: inline;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+}
+.new-users ul li i.f {
+    background-position: right -103px;
+}
+.new-users ul li i.s {
+    background-position: right -146px;
+}
+.new-users ul li i.t {
+    background-position: right -189px;
+}
+.new-users ul li span {
+    display: inline;
+    float: left;
+    color: rgb(51, 51, 51);
+}
+.new-users ul.only {
+    margin-left: 200px;
+}
+.new-icon {
+    background: url('../images/new.png') no-repeat scroll 0px 0px transparent;
+    height: 0px;
+    overflow: hidden;
+    padding-top: 37px;
+    width: 37px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 15;
+}

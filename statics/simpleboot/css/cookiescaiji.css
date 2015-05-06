@@ -1,0 +1,200 @@
+.main { float: left; width: 100%; }
+.inmain { padding: 0px 30px 10px 0px; min-height: 350px; margin-left: 100px; }
+.table-container { color: rgb(51, 51, 51); }
+.table-container .color-grey { color: rgb(153, 153, 153) ! important; }
+.table-container .color-blue { color: rgb(8, 89, 172) ! important; }
+.table-container .btn { font-weight: normal; }
+.table-container .btn:hover { color: rgb(51, 51, 51); }
+.table { width: 100%; table-layout: auto; }
+.table th { background-color: rgb(235, 235, 235); font-weight: normal; padding: 7px 5px 6px; color: rgb(153, 153, 153); border-bottom: 1px solid rgb(225, 225, 225); }
+.table th:first-child { padding-left: 14px; }
+.table th:last-child { padding-right: 14px; }
+.table th a { color: rgb(153, 153, 153); }
+.table th a:hover { color: rgb(102, 102, 102); }
+.table tbody a { color: rgb(51, 51, 51); }
+.table tbody a:hover { color: rgb(8, 89, 172); }
+.table tbody tr td { border-bottom: 1px solid rgb(225, 225, 225); padding: 10px 5px 9px; }
+.table tbody tr td:first-child { padding-left: 14px; }
+.table tbody tr td:last-child { padding-right: 14px; }
+.table tbody tr td .operation { visibility: hidden; }
+.table tbody tr td .operation a { color: rgb(8, 89, 172); }
+.table tbody tr:hover td, .table tbody tr.hover td, .table tbody tr.current td { background-color: rgb(235, 235, 235); }
+.table tbody tr:hover td .operation, .table tbody tr.hover td .operation, .table tbody tr.current td .operation { visibility: visible; }
+.table tbody tr:hover td .operation a, .table tbody tr.hover td .operation a, .table tbody tr.current td .operation a { color: rgb(8, 89, 172); }
+.table td.left, .table th.left { text-align: left; }
+.table td.center, .table th.center { text-align: center; }
+.table-title { margin-bottom: 40px; }
+.table-title li { float: left; margin-right: 30px; }
+.table-title h2 { margin: 0px; }
+.table-title h2 a { color: rgb(153, 153, 153); }
+.dropdown { position: relative; border-radius: 2px; border-width: 1px; border-style: solid; border-color: rgb(221, 221, 221) rgb(221, 221, 221) rgb(187, 187, 187); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 23px; line-height: 23px; display: inline-block; }
+.dropdown:after { content: " "; display: block; height: 0px; clear: both; }
+.dropdown .icon-arrow-down { font-size: 8px; position: absolute; right: 8px; top: 8px; height: 8px; line-height: 8px; color: rgb(153, 153, 153); }
+.dropdown .dropdown-hd { color: rgb(51, 51, 51); padding-right: 10px; padding-left: 10px; display: block; background-color: rgb(244, 244, 244); background-image: -moz-linear-gradient(center top , rgb(248, 248, 248), rgb(238, 238, 238)); background-repeat: repeat-x; cursor: default; }
+.dropdown .dropdown-list { display: none; top: 24px; left: -1px; position: absolute; border: 1px solid rgb(221, 221, 221); background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 999999; list-style-type: none; margin: 0px; padding: 0px; border-radius: 2px; box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); overflow: auto; }
+.dropdown .dropdown-list .dropdown-item { height: 25px; overflow: hidden; line-height: 25px; text-indent: 8px; color: rgb(51, 51, 51); position: relative; padding-right: 20px; cursor: default; -moz-user-select: none; }
+.dropdown .dropdown-list-noicon .dropdown-item { padding-right: 0px; }
+.dropdown .dropdown-list .dropdown-item span { height: 25px; line-height: 25px; overflow: hidden; display: block; }
+.dropdown .dropdown-list .dropdown-item .icon-ok { font-size: 9px; position: absolute; right: 6px; top: 6px; line-height: 12px; visibility: hidden; color: rgb(153, 153, 153); clear: both; }
+.dropdown .dropdown-list .dropdown-itemselected { color: rgb(0, 0, 0); }
+.dropdown .dropdown-list .dropdown-itemselected .icon-ok { visibility: visible; }
+.pagination { height: 25px; line-height: 25px; }
+.pagination .pagination-info { float: left; color: rgb(102, 102, 102); }
+.pagination .pagination-info span { float: left; }
+.pagination .pagination-info .dropdown { float: left; margin: 0px 5px; height: 23px; line-height: 23px; }
+.pagination .pagination-info .dropdown .dropdown-list { top: 24px; }
+.pagination .b { font-weight: bold; margin: 0px 3px; }
+.pagination .mr { margin-left: 12px; }
+.pagination .pagination-pages { float: right; }
+.pagination .pagination-page { float: left; }
+.pagination .pagination-page .page-simply { float: left; margin: 0px 10px; }
+.pagination .pagination-page .page-prev, .pagination .pagination-page .page-next { float: left; margin-right: 3px; padding: 1px 6px; color: rgb(153, 153, 153); height: 23px; line-height: 23px; border-radius: 2px; text-decoration: none; }
+.pagination .pagination-page .page-prev i, .pagination .pagination-page .page-next i { font-size: 12px; float: left; }
+.pagination .pagination-page .page-prev .iconfont, .pagination .pagination-page .page-next .iconfont { cursor: pointer; }
+.pagination .pagination-page .page-prev:hover, .pagination .pagination-page .page-next:hover { padding: 0px 5px; border: 1px solid rgb(238, 238, 238); background-color: rgb(238, 238, 238); color: rgb(102, 102, 102); text-decoration: none; }
+.pagination .pagination-count { float: left; margin-left: 7px; }
+.pagination .pagination-form { float: left; margin-left: 35px; }
+.pagination .pagination-form input { width: 40px; margin: 0px 5px; display: inline-block; height: 18px; padding: 2px 8px 3px; line-height: 18px; color: rgb(16, 16, 16); border-width: 1px; border-style: solid; border-right: 1px solid rgb(221, 221, 221); border-color: rgb(187, 187, 187) rgb(221, 221, 221) rgb(221, 221, 221); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 2px; vertical-align: top; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; }
+.pagination .pagination-form input:hover { border-color: rgb(172, 172, 172) rgb(208, 208, 208) rgb(208, 208, 208); box-shadow: 0px 1px rgb(245, 245, 245) inset; }
+.pagination .pagination-form input:focus { border-color: rgb(72, 143, 205); outline: 0px none; box-shadow: 0px 0px 8px rgba(72, 143, 205, 0.6); }
+.pagination .pagination-form .btn { margin-left: 5px; cursor: pointer; text-decoration: none; }
+.pagination .pagination-form .btn:hover { text-decoration: none; }
+.input, .textarea { display: inline-block; width: 210px; height: 18px; padding: 2px 8px 3px; margin-bottom: 9px; line-height: 18px; color: rgb(51, 51, 51); border-width: 1px; border-style: solid; border-right: 1px solid rgb(221, 221, 221); border-color: rgb(187, 187, 187) rgb(221, 221, 221) rgb(221, 221, 221); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 2px; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; }
+.input:hover, .textarea:hover { border-color: rgb(153, 153, 153) rgb(204, 204, 204) rgb(204, 204, 204); box-shadow: 0px 1px rgb(245, 245, 245) inset; }
+.input:focus, .textarea:focus { border-color: rgb(72, 143, 205); outline: 0px none; box-shadow: 0px 0px 8px rgba(72, 143, 205, 0.6); }
+/* ::::: http://g.tbcdn.cn/thx/brix/2.0/brix-min.css ::::: */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin: 0px; padding: 0px; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 500; }
+address, caption, cite, code, dfn, em, th, var { font-style: normal; font-weight: 500; }
+ol, ul { list-style: outside none none; }
+ins, a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+fieldset, img { border: 0px none; }
+html { color: rgb(0, 0, 0); background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+body, button, input, select, textarea { font: 12px/1.5 "Microsoft Yahei",Tahoma,Helvetica,Arial,sans-serif,宋体; }
+button, input, select, textarea { font-size: 100%; }
+table { border-collapse: collapse; border-spacing: 0px; }
+th { text-align: inherit; }
+body, button, input, select, textarea { color: rgb(102, 102, 102); }
+h1, h2, h3, h4, h5, h6 { color: rgb(51, 51, 51); }
+a { color: rgb(0, 102, 221); }
+a:hover { color: rgb(255, 102, 0); }
+@font-face {
+	font-family: "uxiconfont";
+	src: url('uxiconfont.eot') format("embedded-opentype"), url('uxiconfont.woff') format("woff"), url('uxiconfont.ttf') format("truetype"), url('uxiconfont.svg') format("svg");
+}
+.iconfont { font-family: "uxiconfont"; font-size: 16px; font-style: normal; }
+.btn { box-sizing: content-box; display: inline-block; border-width: 1px; border-style: solid; border-color: rgb(221, 221, 221) rgb(221, 221, 221) rgb(187, 187, 187); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 2px; margin-bottom: 0px; padding: 0px 10px; width: auto; height: 21px; line-height: 21px; font-size: 12px; font-weight: bold; cursor: pointer; background-color: rgb(244, 244, 244); background-image: -moz-linear-gradient(center top , rgb(248, 248, 248), rgb(238, 238, 238)); background-repeat: repeat-x; }
+.btn, .btn:hover, .btn:visited { color: rgb(51, 51, 51) ! important; }
+.btn:hover { box-shadow: none; background-color: rgb(237, 237, 237); background-image: -moz-linear-gradient(center top , rgb(242, 242, 242), rgb(230, 230, 230)); background-repeat: repeat-x; }
+.btn:active { background-color: rgb(235, 235, 235); background-image: -moz-linear-gradient(center top , rgb(230, 230, 230), rgb(242, 242, 242)); background-repeat: repeat-x; }
+.btn .iconfont { font-size: 12px ! important; font-weight: normal; }
+.btn-blue { border-color: transparent transparent rgb(9, 96, 171); background-color: rgb(66, 136, 197); background-image: -moz-linear-gradient(center top , rgb(72, 143, 205), rgb(58, 125, 184)); background-repeat: repeat-x; }
+.btn-blue, .btn-blue:hover, .btn-blue:visited { color: rgb(255, 255, 255) ! important; }
+.btn-blue:hover { background-color: rgb(53, 121, 181); background-image: -moz-linear-gradient(center top , rgb(64, 135, 198), rgb(37, 101, 156)); background-repeat: repeat-x; }
+.btn-blue:active { background-color: rgb(48, 115, 173); background-image: -moz-linear-gradient(center top , rgb(37, 101, 156), rgb(64, 135, 198)); background-repeat: repeat-x; }
+.btn-size25, .btn-xsmall { height: 23px; line-height: 23px; }
+.clearfix {  }
+.clearfix:before, .clearfix:after { display: table; content: ""; }
+.clearfix:after { clear: both; }
+/* ::::: http://g.tbcdn.cn/mm/pub/0.8.7/assets/css/union-min.css ::::: */
+
+a { color: rgb(51, 51, 51); }
+a:hover { color: rgb(255, 102, 0); text-decoration: none; }
+*::-moz-selection { background-color: rgb(242, 123, 4); }
+@font-face {
+	font-family: "iconfont";
+	src: url('font_1421310078_9034503.eot') format("embedded-opentype"), url('font_1421310078_9034503.woff') format("woff"), url('font_1421310078_9034503.ttf') format("truetype"), url('font_1421310078_9034503.svg') format("svg");
+}
+@font-face {
+	font-family: "iconfont-pub";
+	font-style: normal;
+	font-weight: 400;
+	src: url('font_1423631177_5436883.eot') format("embedded-opentype"), url('font_1423631177_5436883.woff') format("woff"), url('font_1423631177_5436883.ttf') format("truetype"), url('font_1423631177_5436883.svg') format("svg");
+}
+.iconfont {  }
+.color-grey { color: rgb(153, 153, 153); }
+.color-blue { color: rgb(0, 102, 221); }
+.color-red { color: red; }
+.color-green { color: rgb(90, 166, 46); }
+.fontsize-13 { font-size: 13px; }
+.ml2 { margin-left: 2px; }
+.cursor-pointer { cursor: pointer; }
+@media not all {
+	input[type="checkbox"], input[type="radio"] { border: 1px solid rgb(129, 129, 129); }
+}
+input[type="checkbox"], input[type="radio"] { background: -moz-linear-gradient(center top , rgb(238, 238, 238), rgb(255, 255, 255)) repeat scroll 0% 0% rgb(254, 254, 254); cursor: pointer; position: relative; vertical-align: middle; box-sizing: border-box; margin: 0px; }
+input[type="checkbox"] { width: 14px; height: 14px; border-color: rgb(153, 153, 153) rgb(204, 204, 204) rgb(204, 204, 204); }
+input[type="checkbox"]:hover { border-color: rgb(102, 102, 102) rgb(153, 153, 153) rgb(153, 153, 153); }
+input[type="checkbox"]:focus, input[type="radio"]:focus { border-color: rgb(77, 144, 254); outline: 0px none; }
+input[type="checkbox"]:disabled, input[type="radio"]:disabled { background: none repeat scroll 0% 0% rgb(221, 221, 221); border-color: rgb(170, 170, 170); cursor: not-allowed; }
+input[type="checkbox"]:checked:after { content: url('t1i51exbhxxxcezl..-10-9.png'); position: absolute; top: -3px; left: 1px; }
+input:disabled { color: rgb(187, 187, 187); cursor: not-allowed; }
+html { height: 100%; overflow: auto; }
+body { background-color: rgb(250, 250, 250); color: rgb(51, 51, 51); position: relative; height: auto ! important; min-height: 100%; min-width: 1000px; }
+.dropdown { vertical-align: middle; outline: 0px none; }
+.dropdown .dropdown-hd { height: 23px; padding-right: 22px; overflow: hidden; }
+.btn { font-weight: 400; vertical-align: middle; overflow: visible; white-space: nowrap; }
+.btn .icon-arrow-down { font-size: 8px ! important; }
+.input, .textarea { margin-bottom: 0px; }
+.ks-combobox { border: 1px solid rgb(181, 182, 181); background-color: rgb(221, 221, 221); display: inline-block; overflow: hidden; font-size: 12px; }
+.ks-combobox-input { float: left; width: 100%; vertical-align: middle; background-color: rgb(255, 255, 255); border: 0px none; color: rgb(0, 0, 0); line-height: 18px; height: 18px; overflow-y: visible; font-size: 100%; }
+.table { table-layout: fixed; word-wrap: break-word; }
+.table .iconfont { color: rgb(119, 119, 119); }
+.table tbody a:hover { color: rgb(255, 102, 51); }
+.table tbody tr td .operation a { color: rgb(0, 102, 221); }
+.table tbody tr td .operation a:hover { color: rgb(255, 102, 51); }
+.table-container .tfoot { background-color: rgb(247, 247, 247); border-bottom: 1px solid rgb(235, 235, 235); padding: 6px 14px; }
+.table-container .list-group { position: relative; padding-left: 90px; height: auto ! important; min-height: 80px; }
+.table-container .list-group .img { border: 1px solid rgb(195, 195, 195); background-color: rgb(255, 255, 255); text-align: center; position: absolute; top: 0px; left: 0px; }
+.table-container .list-group .img img { height: 80px; width: 80px; display: block; vertical-align: top; }
+.table-container .list-group .attr { float: left; max-width: 400px; }
+.table-container .list-group .attr li { margin-bottom: 6px; }
+.table-container .list-group .attr .title .H { color: red; }
+.table-container .table th:first-child { padding-left: 10px; }
+.table-container .table th:last-child { padding-right: 10px; }
+.table-container .table td:first-child { padding-left: 10px; }
+.table-container .table td:last-child { padding-right: 10px; }
+.table-container .table th .icon-sort, .table-container .table th a.sort .iconfont { font-size: 10px; vertical-align: middle; }
+.table-title-extra { margin-bottom: 24px; }
+.table-title-extra li { margin-top: 8px; }
+.table-title-extra li.selected { margin-top: 0px; }
+.table-title-extra li h2 a, .table-title-extra li h2 span { color: rgb(153, 153, 153); font-size: 18px; }
+.table-title-extra li h2 a:hover { text-decoration: none; }
+.table-title-extra li.selected h2 a, .table-title-extra li.selected h2 span { color: rgb(51, 51, 51); font-size: 24px; }
+.self-search { background: none repeat scroll 0% 0% rgb(235, 235, 235); padding: 30px 0px; margin-bottom: 34px; }
+.self-search .bd { width: 660px; margin: 0px auto; }
+.self-search .search-panel { float: left; border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: rgb(204, 204, 204) -moz-use-text-color rgb(204, 204, 204) rgb(204, 204, 204); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background: none repeat scroll 0% 0% #fff; width: 620px; position: relative; }
+.self-search .search-btn { float: left; height: 38px; line-height: 38px; width: 38px; background-color: rgb(255, 102, 51); border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(204, 204, 204) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; color: rgb(255, 255, 255); text-align: center; font-size: 25px; }
+.self-search .search-panel input { border: 0px none; font-size: 14px; height: 20px; line-height: 20px; padding: 9px; width: 565px; outline: 0px none; height:20px;background-color: #fff;margin-bottom: 0;}
+.search-filter dl { padding: 0px 0px 16px 60px; position: relative; z-index: 9; }
+.search-filter dt { color: rgb(80, 80, 80); font-size: 18px; position: absolute; top: -5px; left: 0px; }
+.search-filter dd { position: relative; }
+.search-filter .filter-panel-fold dd { overflow: hidden; height: 26px; padding-right: 50px; }
+.search-filter .filter-panel-fold dd .more { position: absolute; top: 0px; right: 0px; display: none; color: rgb(255, 68, 0); }
+.search-filter .filter-panel-fold dd .more .icon { font-size: 12px; }
+.search-filter .cat li { float: left; margin: 0px 20px 8px 0px; white-space: nowrap; }
+.search-filter .cat li a{cursor: pointer;}
+.search-filter .cat li.selected a { color: rgb(255, 68, 0); }
+.search-filter .require-filter .filter-item { color: rgb(80, 80, 80); float: left; margin-right: 20px; margin-bottom: 10px;cursor: pointer; }
+.search-filter .require-filter .label {  }
+.search-filter .require-filter .field { display: inline-block; position: relative; z-index: 9; }
+.search-filter .require-filter .filter-text { outline: 0px none; width: 30px; padding: 2px 3px 3px; }
+.search-filter .require-filter .location { position: relative; white-space: nowrap; overflow: hidden; }
+.search-filter .require-filter .location span { width: 38px; display: inline-block; }
+.search-filter .require-filter .location .iconfont { color: rgb(153, 153, 153); }
+.search-filter .require-filter .location-select { border: 1px solid rgb(219, 219, 219); box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); background-color: rgb(255, 255, 255); width: 200px; overflow: hidden; position: absolute; left: -999px; top: 0px; z-index: 99999; }
+.search-filter .require-filter .location-select .loc-list { border-bottom: 1px dotted gray; margin-bottom: -1px; padding: 6px; }
+.search-filter .require-filter .location-select .loc-list li { float: left; margin: 0px 3px; }
+.search-filter .require-filter .location-select .loc-list .checked a { background: none repeat scroll 0% 0% rgb(255, 85, 0); color: rgb(255, 255, 255); }
+.search-filter .require-filter .location-select .loc-list li a { padding: 2px; white-space: nowrap; }
+.search-filter .require-filter .location-select .loc-search { padding: 6px; }
+.search-filter .require-filter .location-select .loc-search .input { border: 1px solid rgb(148, 148, 148); height: 18px; line-height: 18px; width: 120px; padding: 2px; vertical-align: top; outline: 0px none; }
+.search-filter .require-filter .location-select .loc-search .btn { margin-left: 3px; }
+.search-filter .require-filter .submit-item { margin-right: 0px; }
+.self-itemlist .has-campaign { margin-top: 5px; display: block; }
+.self-itemlist .has-campaign:hover .iconfont { color: rgb(255, 102, 51); }
+.self-itemlist .has-campaign .iconfont { font-size: 10px; color: rgb(8, 89, 172); }
+.table-container .table .color-blue { color: rgb(0, 102, 221) ! important; }
+.plcaiji{margin: 10px;display: inline-block;}

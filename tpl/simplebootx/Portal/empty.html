@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<title>{$post_title} {$site_name} </title>
+		<meta name="keywords" content="{$post_keywords}" />
+		<meta name="description" content="{$post_excerpt}">
+		<tc_include file="Public:head" />
+		<style>
+			#article_content img{height:auto !important}
+		</style>
+	</head>
+<body>
+<tc_include file="Public:nav" />
+{$post_content}
+<tc_include file="Public:footer"/>
+<tc_include file="Public:scripts"/>
+</body>
+</html>

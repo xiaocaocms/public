@@ -1,0 +1,26 @@
+<admintpl file="caijiheader"/>
+</head>
+<body>
+<div  class="clearfix wrap">
+    <div  class="main">
+        <div  style="margin-left: 20px;" class="inmain" id="inmain">
+            <form class="J_ajaxForm" action="{:U('indexadmin/jiukuaijiucaiji')}" method="post" id="list_search"><div class="plcaiji">采集个数：<input id="pages" name="pages" placeholder="请输入你要采集的个数,默认500个" autocomplete="off" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"><a href="javascript:void(0);" onclick="jiukuaijiucaiji()" class="btn btn-blue">批量采集</a></div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__ROOT__/statics/js/common.js"></script>
+<script type="text/javascript" src="__ROOT__/statics/js/content_addtop.js"></script>
+<script type="text/javascript">
+    function jiukuaijiucaiji() {
+        open_iframe_dialog('index.php?g=caiji&m=indexadmin&a=jiukuaijiucaiji','九块九采集');
+    }
+    function EnterPress(e){
+        var e = e || window.event;
+        if(e.keyCode == 13){
+            $('#list_search').submit();
+        }
+    }
+</script>
+</body>
+</html>

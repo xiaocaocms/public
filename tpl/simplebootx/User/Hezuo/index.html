@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>商家中心,淘宝卖家活动报名入口 - {$site_name}</title>
+    <meta name="keywords" content="{$site_seo_keywords}">
+    <meta name="description" content="{$site_seo_description}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/hezuo.css" media="all">
+    <tc_include file="Public:common" />
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="area">
+            <div class="logo">
+                <div class="fl">
+                    <a class="juan-logo fl" href="/" title="首页"></a>
+                    <a href="/">
+                        <span class="juan-busi fl"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="busi_login fr">
+                <if condition="sp_is_user_login()">
+                    <p style="display:block;" class="y_login">
+                        <span class="user_img">
+                            <a href="<?php echo U('profile/avatar');?>">
+                                <?php if(empty($avatar)): ?>
+                                <img src="__TMPL__/Public/images/headicon.png" class="headicon" />
+                                <?php else: ?>
+                                <img src="<?php echo sp_get_user_avatar_url($avatar);?>" class="headicon" />
+                                <?php endif; ?>
+                            </a>
+                        </span>您好!
+                        <a href="{:u('user/center/index')}">
+                            <strong>{$user.user_nicename}</strong>
+                        </a><a href="{:u('user/index/logout')}" class="out">退出</a>
+                    </p>
+                    <else/>
+                    <div class="union-login fl"> <a href="{:U('api/oauth/login',array('type'=>'qq'))}" rel="nofollow">QQ登录</a> | <a href="{:U('api/oauth/login',array('type'=>'sina'))}" rel="nofollow">微博登录</a> |</div>
+                    <div class="login-show fl">&nbsp;<a href="{:u('user/login/index')}" rel="nofollow">登录</a> | <a href="{:u('user/register/index')}" rel="nofollow">免费注册</a></div>
+                </if>
+            </div>
+        </div>
+    </div>
+    <div class="busi_nav">
+        <div class="m_nav">
+            <ul class="enr_nav fl">
+                <li><a class="active" href="{:U('hezuo/index')}">商品报名</a></li>
+                <li><a href="{:U('hezuo/goods')}">商品管理</a></li>
+                <li><a href="/">小草特卖</a></li>
+                <li><a href="{:U('Portal/list/index')}">卖家帮助</a></li>
+            </ul>
+            <ul class="my_zhuanghu fr">
+                <li><a href="{:U('hezuo/home')}">我的账户管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--busi_con  start -->
+    <div class="main mt20 clear">
+        <div class="busi_con">
+            <div class="busi_box">
+                <div class="busi_bar fl" id="banner_list">
+                    <img src="__TMPL__Public/images/5462c0a22d36e_610x270.jpg" alt="" height="270" width="610">
+                </div>
+                <div class="busi_notice fr">
+                    <div class="not_btn clear">
+                        <p id="tab_btn"><a href="javascript:;" class="active">规则</a>
+                        </p>
+                        <div class="tab_box">
+                            <ul>
+                                <li><a class="fl" href="#">关于技术服务费收费规则新增条例</a>
+                                    <em>new</em>
+                                </li>
+                                <li><a class="fl" href="#">商品质检及其注意事项</a>
+                                    <em>new</em>
+                                </li>
+                                <li><a class="fl" href="#">小草CMS商品团购规则</a>
+                                </li>
+                                <li><a class="fl" href="#">缴纳商家保证金的相关规则</a>
+                                </li>
+                                <li><a class="fl" href="#">创建修改商品协议</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn clear"><a href="#add_goods">我要报名</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info_show">
+            <div class="busi_path mb60">
+                <span class="path_t fl">
+                    <em class="path_pic">商品报名审核流程</em>
+                    <em class="san_right"></em>
+                </span>
+                <ul class="fl">
+                    <li class="frist">
+                        <p>报名后会在5个工作日内审核，请耐心等待，不要催促。</p>
+                        <em>
+                            <img src="__TMPL__Public/images/push_r.gif" alt="">
+                        </em>
+                    </li>
+                    <li class="sencond">
+                        <p>审核中，如您的商品符合平台要求，会提示您完成待办事件。</p>
+                        <em>
+                            <img src="__TMPL__Public/images/push_r.gif" alt="">
+                        </em>
+                    </li>
+                    <li class="third">
+                        <p>排期后请按照平台要求设置商品，否则会影响活动的上线。</p>
+                        <em>
+                            <img src="__TMPL__Public/images/push_r.gif" alt="">
+                        </em>
+                    </li>
+                    <li class="four">
+                        <p>活动上线后如果库存充足，可以在平台展示5天。</p>
+                    </li>
+                </ul>
+            </div>
+            <!--busi_path  end -->
+            <!--busi_jieshao  start -->
+            <div class="busi_jieshao clear">
+                <h3>
+                    <div class="line"></div>
+                    <div class="line-txt" id="add_goods">热门专场活动</div>
+                </h3>
+                <ul class="clear">
+                    <volist name='cateList' id='vo'>
+                        <li>
+                            <h4>{$vo.cateName}</h4>
+                            <div class="box clear">
+                                <div class="production" style="height: 38px;">{:msubstr($vo['intro'],0,32)}</div>
+                                <h5>活动时间</h5>
+                                <div class="production_1 production_2">
+                                    {$vo.aboutTime}
+                                </div>
+                                <div class="btns-all">
+                                    <a class="sub sub01 sub02 fr" href="{:U('hezuo/detail',array('id'=>$vo['id']))}">报名并了解详情</a>
+                                </div>
+                            </div>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+            <!--busi_jieshao  end -->
+        </div>
+    </div>
+    <tc_include file="Public:footer" />
+    <tc_include file="Public:scripts" />
+</body>
+</html>

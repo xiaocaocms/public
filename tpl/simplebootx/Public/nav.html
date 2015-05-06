@@ -1,0 +1,73 @@
+<div class="totop-tips">
+    <p class="">按&nbsp;
+        <strong>Ctrl+D&nbsp;</strong>，把小草网放入收藏夹，折扣信息一手掌握！<a href="javascript:void(0)">不再提醒</a>
+        <span class="closet"><em>x</em>关闭</span>
+    </p>
+</div>
+<!-- 页头 -->
+<div id="toolbar">
+    <div class="bar-con">
+        <ul class="topNav fl">
+            <PHP>$_GET['m']=$Think.MODULE_NAME;</PHP>
+            <li class="first"><a href="{$site_host}" class="<if condition="empty($_GET['id']) AND $_GET['m'] neq 'List'">active</if>">{$site_name}</a>
+            </li>
+            <li><a href="{:leuu('portal/list/index',array('id'=>6))}" target="_top" class="<if condition="($_GET['id'] eq 6) AND ($_GET['m'] eq 'List')">active</if> red">9.9包邮</a>
+            </li>
+            <li>
+                <a href="{$site_host}wap" target="_top">
+                    <em class="icon-normal icon-phone"></em>手机版</a>
+            </li>
+        </ul>
+        <div class="right-show fr">
+            <if condition="sp_is_user_login()">
+                <div class="union-login">
+                    <a class="dropdown-toggle user" href="{:u('user/center/index')}">{$user.user_nicename}</a>
+                    <a href="{:u('user/center/index')}"><i class="fa fa-user"></i> &nbsp;个人中心</a>
+                    <a href="{:u('user/index/logout')}"><i class="fa fa-sign-out"></i> &nbsp;退出</a>
+                </div>
+                <else/>
+                <div class="union-login"> <a href="{:U('api/oauth/login',array('type'=>'qq'))}" rel="nofollow">QQ登录</a><a href="{:U('api/oauth/login',array('type'=>'sina'))}" rel="nofollow">微博登录</a>　|</div>
+                <div class="login-show"><a href="{:u('user/login/index')}" rel="nofollow">登录</a><a href="{:u('user/register/index')}" rel="nofollow">免费注册</a>　|</div>
+            </if>
+            <div class="other-show"><a href="http://wpa.qq.com/msgrd?v=3&uin=1776188377&site=qq&menu=yes" target="_top" rel="nofollow">在线客服</a><a href="{:leuu('user/hezuo/index')}" target="_top">卖家报名</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="area">
+        <a class="juan-logo fl" href="{$site_host}" title="小草首页">
+            <div class="logo logo1">
+                <div class="fl">
+                    <span class="juan-txt fl"></span>
+                </div>
+            </div>
+        </a>
+        <div class="protection">
+            <a title="每天10点开抢" class="update" href="{:leuu('portal/page/index',array('id'=>16))}" target="_blank" rel="nofollow"></a>
+            <a title="职业买手砍价" class="lowest" href="{:leuu('portal/page/index',array('id'=>16))}#consumer03" target="_blank" rel="nofollow"></a>
+            <a title="商品验货质检" class="check" href="{:leuu('portal/page/index',array('id'=>16))}#consumer04" target="_blank" rel="nofollow"></a>
+        </div>
+        <div class="search">
+            <form name="searchform" id="searchform" action="{:leuu('portal/search/index')}" method="post">
+            <span class="search-area fl">
+                <input name="keywords" id="keywords" class="txt" value="请输入想找的宝贝" title="请输入想找的宝贝" type="text" onblur="if (value=='') {value='请输入想找的宝贝'}" onfocus="if(value=='请输入想找的宝贝') {value=''}">
+            </span>
+            <input value="" class="smt fr" type="submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="mainNav">
+        <div class="nav">
+            <?php $effected_id="" ; $filetpl="<a href='\$href' target='\$target'>\$label</a>" ; $foldertpl="<a href='\$href' target='\$target'>\$label</a>" ; $ul_class="navigation fl" ; $li_class="" ; $style="navigation fl" ; $showlevel=6; $dropdown='dropdown' ; echo sp_get_menu( "main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown); ?>
+            <div class="state-show fr"> <a href="{:leuu('scoremall/index/index')}" target="_top" class="normal-a">积分商城</a> 
+                <a href="{:leuu('user/login/signGetScore')}" class="normal-a dosign">
+                    <em class="icon-normal icon-sign"></em>
+                    <em class="text">签到领积分</em>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /页头 -->

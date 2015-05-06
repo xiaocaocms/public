@@ -1,0 +1,1 @@
+<div class="footer"> &copy; 2012-2013 <a href="http://www.xiaocaocms.com" target="_blank">www.xiaocaocms.com</a>小草网络科技出品</div>

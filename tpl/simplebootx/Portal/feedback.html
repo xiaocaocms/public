@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>{$post_title} {$site_name} </title>
+        <meta name="keywords" content="{$post_keywords}" />
+        <meta name="description" content="{$post_excerpt}">
+        <tc_include file="Public:head" />
+        <style>
+            #article_content img{height:auto !important}
+        </style>
+        <link href="__TMPL__Public/css/about.css" rel="stylesheet" />
+    </head>
+<body>
+<tc_include file="Public:nav" />
+<div class="main">
+    <div class="piece about">
+        <div class="white_top"><div class="white_top_left"></div><div class="white_top_middle"></div><div class="white_top_right"></div></div>
+        <div class="white_bg">
+            <div class="suggest_contain">
+                <form action="{:leuu('feedback/index')}" method="post">
+                    <div class="title"></div>
+                    <textarea name="content" id="content" onfocus="if (this.value=='请输入文字...') {this.value=''; this.style.color='#000'}" style="color: rgb(0, 0, 0);">请输入文字...</textarea>
+                    <h4>请留下您的联系方式，方便我们与您联系</h4>
+                    <input type="text" name="link" class="text" id="link" onfocus="if (this.value=='请输入常用QQ或者邮箱') {this.value=''; this.style.color='#000'}" value="请输入常用QQ或者邮箱">
+                    <input type="submit" value=" " class="smt">
+                </form>
+            </div>
+        </div>
+        <div class="white_bottom"><div class="white_bottom_left"></div><div class="white_bottom_middle"></div><div class="white_bottom_right"></div></div>
+    </div>
+</div>
+
+<tc_include file="Public:footer"/>
+<tc_include file="Public:scripts"/>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<admintpl file="header"/>
+<body class="J_scroll_fixed">
+<div class="wrap J_check_wrap">
+  <ul class="nav nav-tabs">
+     <li><a >设置cookies</a></li>
+  </ul>
+  <form class="form-horizontal J_ajaxForm" action="{:U('indexadmin/setcookies')}" method="post" id="myform">
+    <div class="table_full">
+      <table width="100%" cellpadding="2" cellspacing="2">
+        <tr>
+          <th>cookies</th>
+          <td><textarea name="cookies" rows="2" cols="20" id="cookies" class="inputtext" style="height:100px;width:500px;">{$cookies}</textarea><a target="_blank" href="http://bbs.xiaocaocms.com/thread-11-1-1.html">获取cookies教程</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn_submit  J_ajax_submit_btn">提交</button>
+        <a class="btn" href="__URL__">返回</a>
+    </div>
+  </form>
+</div>
+<script src="__ROOT__/statics/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<script type="text/javascript">
+//全局变量
+var GV = {
+    DIMAUB: "__ROOT__/",
+    JS_ROOT: "statics/js/",
+    TOKEN: ""
+};
+</script>
+<!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="__ROOT__/statics/js/jquery.js"></script>
+    <script src="__ROOT__/statics/js/wind.js"></script>
+    <script src="__TMPL__Public/simpleboot/bootstrap/js/bootstrap.min.js"></script>
+    <script src="__ROOT__/statics/js/frontend.js"></script>
+    <script src="__TMPL__Public/js/waypoints.js"></script>
+    <script src="__ROOT__/statics/js/lazyload.js"></script>
+	<script>
+	$(function(){
+		$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+		
+		;(function($){
+			$.fn.totop=function(opt){
+				var scrolling=false;
+				return this.each(function(){
+					var $this=$(this);
+					$(window).scroll(function(){
+						if(!scrolling){
+							var sd=$(window).scrollTop();
+							if(sd>100){
+								$this.fadeIn();
+							}else{
+								$this.fadeOut();
+							}
+						}
+					});
+					
+					$this.click(function(){
+						scrolling=true;
+						$('html, body').animate({
+							scrollTop : 0
+						}, 500,function(){
+							scrolling=false;
+							$this.fadeOut();
+						});
+					});
+				});
+			};
+		})(jQuery);
+		$(".side_right").totop();
+	});
+	var F_totoptips = function(){
+        var F_isMac = function(){
+            if(navigator.userAgent.indexOf("Mac") > -1){
+                $(".totop-tips strong").html("Command+d");
+            }else{
+                $('body').on("keydown",function(e){
+                    if(e.ctrlKey && 68 == e.keyCode) {
+                        ever_open();
+                        return true;
+                    }
+                });
+            }
+        }
+        var tips_close = function(){
+            $("div.totop-tips").hide();
+        }
+        var ever_open = function(){
+            setCookie("toptips","1", 1);
+            tips_close();
+        }
+        if(getCookie("toptips") == null){
+            $("div.totop-tips").show();
+            $(".jiu-side-nav").css("top","196px");
+            var $tips_a = $("div.totop-tips a")
+            $tips_a.on("click",ever_open);
+            $("div.totop-tips .closet").on("click",tips_close);
+            F_isMac();
+        }else{
+            $("div.totop-tips").hide();
+        }
+    }
+    F_totoptips();
+</script>
+
+

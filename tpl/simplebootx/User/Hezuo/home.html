@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>商家帐户 - 商家中心 - {$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}">
+<meta name="description" content="{$site_seo_description}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="__TMPL__Public/css/home.css" />
+<tc_include file="Public:common" />
+</head>
+<body>
+<div class="header">
+    <div class="area">
+        <div class="logo">
+            <div class="fl"><a class="juan-logo fl" href="/" title="首页"></a><a href="/"><span class="juan-busi fl"></span></a></div>
+        </div>
+        <div class="busi_login fr"><p class="y_login" style="display:block;"><span class="user_img"><img width="26" height="26" src="__TMPL__Public/images/default.jpg_80x80.jpg"></span>您好!<strong>{$user.user_nicename}</strong><a class="out" href="{:U('user/index/logout')}">退出</a></p></div>
+    </div>
+</div>
+
+
+<div class="busi_nav">
+    <div class="m_nav">
+        <ul class="enr_nav fl">
+            <li><a href="{:U('hezuo/index')}">商品报名</a></li>
+            <li><a href="{:U('hezuo/goods')}">商品管理</a></li>
+        </ul>
+        <ul class="my_zhuanghu fr">
+            <li><a href="{:U('user/hezuo/home')}" class="active">我的账户管理</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main mt20 clear">
+	<div class="my_zh_l fl">
+        <dl>
+        <dt><span>我的账户管理</span></dt>
+        <dd><a href="{:U('user/hezuo/home')}" class="active"><i class="s1"></i>我的账户信息<i class="s2"></i></a></dd>
+        <dd><a href="{:U('user/hezuo/userAuth')}"><i class="s1"></i>商家身份认证<i class="s2"></i></a></dd>
+        <dd><a href="{:U('user/hezuo/mobileVerify')}"><i class="s1"></i>认证手机<i class="s2"></i></a></dd>
+        <dd><a href="{:U('user/hezuo/emailVerify')}"><i class="s1"></i>认证邮箱<i class="s2"></i></a></dd>
+        </dl>
+	</div>
+	<div class="m-account fl">
+        <div class="regists-information fund-information fund-info pb0 fl">
+            <h3>{$user.user_nicename} 您好!
+            <span class="welcome f14 s_cor">欢迎登录卖家免费报名系统。</span></h3>  
+        </div>
+        <div class="use-info clear">
+            <h5>报名信息</h5>
+            <ul>
+                <li class="mb0" style="overflow:hidden;"><label for="">当前剩余报名次数:</label><em class="gre">{$home['allNum']-$home['useNum']}</em>次  <span class="s_cor f12">（已报名{$home['useNum']}次）</span> <php>if($home['allNum']-$home['useNum']>0){</php><a class="ble" href="{:U('User/hezuo/index')}">报名新商品&gt;&gt; </a><php>}</php></li>
+                <li>
+                    <dl>
+                        <dt class="s_cor f12">提示：</dt>
+                        <dd class="s_cor f12">
+                            <p>1.您成功报名1次活动，报名次数减1次；商品被驳回1次或成功参加1次活动报名次数加1次。</p>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="sell-info">
+            <div class="message-box message-box-dianpu">
+                <ul>
+                    <li><h5>店铺信息</h5></li>
+                    <li class="mb15">店铺名称：<span>{$home['shopInfo']['storeName']}</span></li>
+                    <li class="mb15">店铺主旺旺：<span>{$home['shopInfo']['storeWW']}</span></li>
+                    <li class="mb15">店铺类型：<span>{$home['shopInfo']['storeType']}</span></li>
+                    <li class="mb15">主营类目：<span>{$home['shopInfo']['goodsType']}</span></li>
+                    <li class="mb15">店铺地址：<span><a href="{$home['shopInfo']['storeUrl']}">{$home['shopInfo']['storeUrl']}</a></span></li>
+                    <li class="mt20"><a class="ble " href="{:U('User/hezuo/editShopInfo')}">修改店铺信息&gt;&gt;</a></li>
+                </ul>
+                <h5>手机认证</h5>
+                <php>if($home['mobile']){</php>
+                    手机号：{$home.mobile}<br/><a href="{:U('User/hezuo/mobileVerify')}">修改认证手机</a>
+                <php>}else{</php>
+                    <span style="color:#f00;">您还没有通过手机认证，手机认证可以享受更多增值服务</span>
+                    <a class="ble" href="{:U('User/hezuo/mobileVerify')}">现在去认证&gt;&gt;</a>
+                <php>}</php>
+                <div class="mb20"></div>
+                <h5>邮箱认证</h5>
+                <php>if($home['email']){</php>
+                    邮箱：{$home.email}<br/><a href="{:U('User/hezuo/emailVerify')}">修改认证邮箱</a>
+                <php>}else{</php>
+                    <span style="color:#f00;">您还没有通过邮箱认证，邮箱认证可以享受更多增值服务</span>
+                    <a class="ble" href="{:U('User/hezuo/emailVerify')}">现在去认证&gt;&gt;</a>
+                <php>}</php>
+            </div>
+        </div>
+    </div>
+</div>
+<tc_include file="Public:footer" />
+</body></html>

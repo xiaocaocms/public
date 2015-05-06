@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>商家帐户 - 商家中心 - {$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}">
+<meta name="description" content="{$site_seo_description}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="__TMPL__Public/css/home.css" />
+<tc_include file="Public:common" />
+</head>
+<body>
+<div class="header">
+    <div class="area">
+        <div class="logo">
+            <div class="fl"><a class="juan-logo fl" href="/" title="首页"></a><a href="/"><span class="juan-busi fl"></span></a></div>
+        </div>
+        <div class="busi_login fr"><p class="y_login" style="display:block;"><span class="user_img"><img width="26" height="26" src="__TMPL__Public/images/default.jpg_80x80.jpg"></span>您好!<strong>{$user.user_nicename}</strong><a class="out" href="{:U('user/index/logout')}">退出</a></p></div>
+    </div>
+</div>
+
+
+<div class="busi_nav">
+    <div class="m_nav">
+        <ul class="enr_nav fl">
+            <li><a href="{:U('hezuo/index')}"  class="active">商品报名</a></li>
+            <li><a href="{:U('hezuo/goods')}">商品管理</a></li>
+        </ul>
+        <ul class="my_zhuanghu fr">
+            <li><a href="{:U('user/hezuo/home')}">我的账户管理</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main mt20 clear">
+<div class="mian-center">
+	<h3><span>{$cateName}</span><em class="jp_cur"></em></h3>
+    <div class="chance">
+        <a target="_blank" href="javascript:;" class="chance_num">您共有  <span class="">{$home.allNum}</span> 次报名机会，还剩  <span class="">{$home['allNum']-$home['useNum']}</span>  次。</a>
+        <p class="chance-tips">报名商品上架或驳回后均会恢复报名次数。如连续10次未通过审核，帐号锁定30天后才能再次报名。</p>
+    </div>
+    <div class="goods-link">
+    <form action="{:u('Hezuo/submitApply')}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="cid" value="{$_GET['id']}" />
+        <label>报名商品链接：</label><input class="txt" type="text" id="good_link" style="background: none repeat scroll 0 0 #FFFFFF;" name="goods_url">
+        <input class="smt"  type="submit" value="报名商品" id="submit"/>
+    </form>
+        <div style="display:none;" id="good_link_error" class="link-tips link-tips01">
+          <span class="title_cur"></span>
+          <span class="tips_ico"><i></i></span>
+          <span class="tips_txt"></span>
+        </div>
+        <div class="friendly" style="margin-top:20px;">
+            <p class="fr-title">什么是淘宝商品链接：</p>
+            <p>如果您是B店，提供的商品格式为：http://detail.tmall.com/item.htm?id=41124349014</p>
+            <p>如果您是C店，提供的商品格式为：http://item.taobao.com/item.htm?id=41069334166</p>
+            <p>如果您是H店，提供的商品格式为：http://detail.tmall.hk/hk/item.htm?id=41321246439</p>
+        </div>
+    </div>
+</div>
+</div>
+<tc_include file="Public:footer" />
+</body></html>

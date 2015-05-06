@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{$name} {$seo_title} {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}" />
+    <meta name="description" content="{$seo_description}">
+    <tc_include file="Public:head" />
+    <link href="__TMPL__Public/css/list.css" rel="stylesheet">
+</head>
+
+<body>
+    <tc_include file="Public:nav" />
+    <div class="container">
+        <div class="pg-opt pin">
+            <div class="container">
+                <h2>{$name}</h2>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="main">
+                <php>
+                    $lists = sp_sql_goods_paged("keywords:$keywords;order:listorder DESC,goods_id DESC;",40);
+                </php>
+                 <p class="tipsing search">为您找到 <em class="org">{$keywords}</em> 的相关宝贝<span>{$lists.count}</span>条：</p>
+                <div id="container">
+                    <ul class="goods-list clear">
+                        <volist name="lists['goods']" id="vo">
+                            <php>
+                                $smeta=json_decode($vo['pic_url'], true);
+                            </php>
+                            <li>
+                                <div class="list-good buy">
+                                    <div class="good-pic">
+                                        <a target="_blank" class="pic-img" href="{:leuu('goods/index',array('id'=>$vo['goods_id']))}">
+                                            <img class="lazy good-pic" src="{:sp_get_asset_upload_path($vo['pic_url'])}" alt="{$vo.goods_name}" style="display: inline;">
+                                            <!-- <span class="new-icon">新品</span> -->
+                                        </a>
+                                    </div>
+                                    <h3 class="good-title">
+                                        <a target="_blank" href="{:leuu('goods/index',array('id'=>$vo['goods_id']))}">{$vo.goods_name}</a>
+                                        <div style="display:none;" class="icon-all">
+                                        </div>
+                                        <span class="sold">
+                                            已售
+                                            <em>{$vo.total_num}</em>
+                                        </span>
+                                    </h3>
+                                    <div class="good-price">
+                                        <span class="price-current">
+                                            <em>￥</em>
+                                            <php>echo (float)$vo['goods_price'];</php>
+                                        </span>
+                                        <span class="des-other">
+                                            <strong></strong>
+                                            <span class="price-old">
+                                                <em>￥</em>
+                                                <php>echo (float)$vo['old_price'];</php>
+                                            </span>
+                                            <span class="discount">(
+                                                <em>
+                                                    <php>echo sprintf( "%.1f ",$vo['goods_price']/$vo['old_price'])*10;</php>
+                                                </em>折)
+                                            </span>
+                                        </span>
+                                        <div class="btn buy m-buy">
+                                            <a rel="nofollow" target="_blank" href="{:leuu('goods/index',array('id'=>$vo['goods_id']))}">
+                                                <eq name="vo.goods_type" value="tmall">
+                                                    <em class="m-icon"></em>
+                                                    <span>天猫</span>
+                                                </eq>
+                                                <eq name="vo.goods_type" value="taobao">
+                                                    <em class="t-icon"></em>
+                                                    <span>淘宝</span>
+                                                </eq>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- like -->
+                                    <a title="加入收藏" class="y-like my-like">
+                                        <i class="like-ico"><span class="heart_left"></span><span class="heart_right"></span></i>
+                                    </a>
+                                    <!-- end like -->
+                                    <div style="display:block" class="box-hd">
+                                    </div>
+                                </div>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="pagination clear">
+                    <ul>
+                        {$lists['page']}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <tc_include file="Public:footer" />
+    <!-- JavaScript -->
+    <tc_include file="Public:scripts" />
+
+</body>
+
+</html>

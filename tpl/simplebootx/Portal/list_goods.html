@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{$name} {$seo_title} {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}" />
+    <meta name="description" content="{$seo_description}">
+    <tc_include file="Public:head" />
+    <link href="__TMPL__Public/css/list.css" rel="stylesheet">
+</head>
+
+<body>
+    <tc_include file="Public:nav" />
+    <div class="container">
+        <div class="pg-opt pin">
+            <div class="container">
+                <h2>{$name}</h2>
+            </div>
+        </div>
+
+        <div class="container">
+            <div>
+                <php>
+                    $lists = sp_sql_goods_paged_bycatid("$cat_id","order:listorder DESC,goods_id DESC;",40);
+                </php>
+                <div id="container">
+                    <ul class="goods-list clear">
+                        <volist name="lists['goods']" id="vo">
+                            <php>
+                                $smeta=json_decode($vo['pic_url'], true);
+                            </php>
+
+                            <li>
+                                <div class="list-good buy">
+                                    <div class="good-pic">
+                                        <a target="_blank" class="pic-img" href="{:leuu('goods/index',array('id'=>$vo['goods_id']))}">
+                                            <img class="lazy good-pic" d-src="{:sp_get_asset_upload_path($vo['pic_url'])}" src="{:sp_get_asset_upload_path($vo['pic_url'])}" alt="{$vo.goods_name}" style="display: inline;">
+                                            <!-- <span class="new-icon">新品</span> -->
+                                        </a>
+                                    </div>
+                                    <h3 class="good-title">
+                                        <a target="_blank" href="{:leuu('goods/index',array('id'=>$vo['goods_id']))}">{$vo.goods_name}</a>
+                                        <div style="display:none;" class="icon-all">
+                                        </div>
+                                        <span class="sold">
+                                            已售
+                                            <em>{$vo.total_num}</em>
+                                        </span>
+                                    </h3>
+                                    <div class="good-price">
+                                        <span class="price-current">
+                                            <em>￥</em>
+                                            <php>echo (float)$vo['goods_price'];</php>
+                                        </span>
+                                        <span class="des-other">
+                                            <strong></strong>
+                                            <span class="price-old">
+                                                <em>￥</em>
+                                                <php>echo (float)$vo['old_price'];</php>
+                                            </span>
+                                            <span class="discount">(
+                                                <em>
+                                                    <php>echo sprintf( "%.1f ",$vo['goods_price']/$vo['old_price'])*10;</php>
+                                                </em>折)
+                                            </span>
+                                        </span>
+                                        <div class="btn buy m-buy">
+                                            <a rel="nofollow" target="_blank" href="{:leuu('goods/index',array('id'=>$vo['goods_id']))}">
+                                                <eq name="vo.goods_type" value="tmall">
+                                                    <em class="m-icon"></em>
+                                                    <span>天猫</span>
+                                                </eq>
+                                                <eq name="vo.goods_type" value="taobao">
+                                                    <em class="t-icon"></em>
+                                                    <span>淘宝</span>
+                                                </eq>
+                                                <eq name="vo.goods_type" value="qugoumai">
+                                                    <span>去购买</span>
+                                                </eq>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- like -->
+                                    <a href="{:U('user/favorite/do_favorite',array('id'=>$vo['goods_id']))}" data-title="{$vo.goods_name}" data-url="{:U('goods/index',array('id'=>$vo['goods_id']))}" data-key="{:sp_get_favorite_key('goods',$vo['goods_id'])}" title="加入收藏" class="J_favorite_btn y-like my-like active">
+                                        <i class="like-ico l-active"><span class="heart_left"></span><span class="heart_right"></span></i>
+                                    </a>
+                                    <!-- end like -->
+                                </div>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="pagination clear">
+                    <ul>
+                        {$lists['page']}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <tc_include file="Public:footer" />
+    <!-- JavaScript -->
+    <tc_include file="Public:scripts" />
+    <script type="text/javascript">
+        $("img.lazy").lazyload({threshold:200,failure_limit:30,placeholder : "__TMPL__Public/images/blank.png",});
+        $(".goods-list li").hover(
+        function(){
+           //当鼠标放上去的时候,程序处理
+           $(this).addClass("hover1 hover");
+        },
+        function(){
+           //当鼠标离开的时候,程序处理
+           $(this).removeClass("hover1 hover");
+        });
+    </script>
+</body>
+
+</html>

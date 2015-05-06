@@ -1,0 +1,337 @@
+html, body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0px; padding: 0px; }
+body, button, input, select, textarea { font: 12px/1.5 "Microsoft Yahei",Tahoma,Helvetica,Arial,sans-serif,宋体; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var, i { font-style: normal; }
+ul, ol, dl, li { list-style: outside none none; }
+fieldset, img { border: 0px none; }
+a { color: rgb(94, 94, 94); text-decoration: none; }
+a:hover { color: rgb(255, 51, 102); text-decoration: underline; }
+:focus { outline: 0px none; }
+body { background: none repeat scroll 0% 0% rgb(246, 246, 246); color: rgb(102, 102, 102); height: 100%; min-width: 1000px; }
+.fl { float: left; display: inline; }
+.fr { float: right; display: inline; }
+input::-moz-placeholder { color: rgb(153, 153, 153); }
+textarea::-moz-placeholder { color: rgb(153, 153, 153); }
+.clearfix::after { clear: both; display: block; height: 0px; overflow: hidden; visibility: hidden; width: 0px; }
+.clear { clear: both; }
+.clear::after, .clear::before { content: ""; display: table; }
+.clear::after { clear: both; overflow: hidden; }
+.clear { clear: both; }
+.mt20 { margin-top: 20px ! important; }
+.header { background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+.header .area { position: relative; height: 85px; width: 980px; margin: 0px auto; }
+.header .logo, .header .search .smt, .header .protection, .new-users ul li i { display: block; background: url('../images/header-total.gif') no-repeat scroll 0% 0% transparent; }
+.header .logo, .header .search, .header .protection { position: absolute; }
+.header .logo { top: 17px; left: 0px; width: 160px; height: 52px; background-position: -78px -52px; }
+.header .logo .juan-logo { height: 0px; overflow: hidden; padding-top: 46px; width: 88px; }
+.icon-normal, #toolbar .bar-con .right-show div.logined-show .normal-box ul li a .icon { background: url('../images/icon-total.png') no-repeat scroll 0px 0px transparent; }
+.icon-normal { background-position: 0px 0px; display: inline-block; vertical-align: -3px; margin-right: 3px; }
+.icon-clock { width: 14px; height: 14px; background-position: right -20px; }
+.main { width: 980px; margin: 0px auto; }
+.app-side-box { top: -22px; width: 164px; text-align: center; }
+.app-side-box .app-show { background: url('../images/jp-app-128.png') no-repeat scroll 0% 0% transparent; height: 128px; width: 128px; margin: 17px auto 0px; }
+.app-side-box .app-txt { font-size: 14px; color: rgb(248, 40, 92); }
+.tag_remind { position: fixed; bottom: 10px; left: 50%; margin-left: 385px; border: 1px solid rgb(248, 40, 92); background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 20px 0px; width: 214px; height: 86px; z-index: 100; text-align: center; }
+.tag_remind .tips { color: rgb(51, 51, 51); font-weight: bold; font-size: 14px; }
+.tag_remind .txt { color: rgb(153, 153, 153); margin: 10px 0px; }
+.tag_remind .btn_all a { color: rgb(255, 255, 255); width: 78px; height: 24px; line-height: 24px; border: 1px solid rgb(220, 1, 56); background: none repeat scroll 0% 0% rgb(255, 45, 94); display: inline-block; text-align: center; border-radius: 3px; }
+.tag_remind .btn_all a:hover { background: none repeat scroll 0% 0% rgb(255, 81, 125); text-decoration: none; }
+.tag_remind .del { display: block; position: absolute; top: 5px; right: 5px; font-size: 16px; color: rgb(204, 204, 204); width: 10px; height: 10px; line-height: 10px; }
+.tag_remind .del:hover { color: rgb(255, 45, 94); text-decoration: none; }
+.foot { position: relative; margin: 40px auto 0px; background: none repeat scroll 0% 0% rgb(249, 249, 249); z-index: 100; border-top: 1px solid rgb(206, 0, 63); clear: both; }
+.foot .white_bg { border-top: 3px solid rgb(248, 40, 92); }
+.foot-con { width: 880px; padding: 0px 50px 30px; margin: 0px auto; }
+.con-box-n { padding-top: 25px; margin: 0px auto; }
+.con-left-info { padding-left: 65px; width: auto; overflow: hidden; }
+.con-left-info dl { float: left; display: inline; width: 150px; }
+.con-left-info dt { font-size: 14px; color: rgb(51, 51, 51); font-weight: bold; margin-bottom: 10px; padding-left: 7px; }
+.con-left-info dd { margin-bottom: 5px; color: rgb(102, 102, 102); }
+.con-left-info dl a { color: rgb(102, 102, 102); }
+.con-left-info dl .revEmail { padding-left: 10px; line-height: 28px; }
+.con-left-info dd i { width: 4px; height: 4px; overflow: hidden; border-radius: 50%; background: none repeat scroll 0% 0% rgb(198, 198, 198); display: inline-block; margin-right: 5px; float: left; margin-top: 8px; }
+.con-left-info .help-info { width: 100px; }
+.con-menu { margin-top: 35px; }
+.con-menu a { display: block; width: 86px; height: 35px; background: url('../images/service_add.gif') no-repeat scroll 0% 0% transparent; }
+.con-menu .service-add { background-position: 0px -5px; }
+.con-menu .service-add:hover { background-position: 0px -52px; }
+.con-menu .service-time { padding-left: 10px; width: 65px; }
+.con-menu .service-time p { color: rgb(145, 145, 145); line-height: 18px; }
+.foot-con .ft-company { text-align: center; padding-top: 20px; color: rgb(198, 198, 198); }
+.foot-con .ft-company a { color: rgb(198, 198, 198); }
+.foot-con .ft-company a:hover { text-decoration: underline; }
+.foot-con .app-side-box { width: 90px; }
+.foot-con .app-side-box .app-show { background: url('../images/jp-app-90.png') no-repeat scroll 0% 0% transparent; height: 90px; width: 90px; margin-top: 5px; }
+.foot-con .app-side-box .app-txt { font-size: 12px; margin: 10px 0px; }
+.con-left-info .school { position: relative; }
+.con-left-info .school em { position: absolute; left: 63px; top: 3px; display: block; width: 14px; height: 14px; background: url('../images/school-ico.png') no-repeat scroll 0% 0% transparent; }
+body, .header { background: none repeat scroll 0% 0% rgb(252, 252, 252); }
+.header .logo { width: 230px; }
+.main { width: 980px; }
+.header .area { height: 90px; }
+.header .logo { top: 25px; }
+.header .logo .juan-busi { background: url('../images/enroll.gif') no-repeat scroll 1px 1px transparent; width: 138px; height: 40px; margin: 5px 0px 0px 3px; }
+.busi_login { margin-top: 40px; }
+.busi_login .not-login { height: 30px; }
+.busi_login .not-login a { width: 78px; height: 28px; line-height: 28px; border-radius: 2px; text-align: center; float: left; margin-left: 10px; display: inline; }
+.busi_login a:hover { text-decoration: none; }
+.busi_login .mai_login { background: none repeat scroll 0% 0% rgb(255, 51, 102); border: 1px solid rgb(220, 1, 56); color: rgb(255, 255, 255); }
+.busi_login .mai_login:hover { background: none repeat scroll 0% 0% rgb(255, 81, 125); }
+.busi_login .new_register { background: none repeat scroll 0% 0% rgb(241, 241, 241); border: 1px solid rgb(226, 226, 226); color: rgb(51, 51, 51); }
+.busi_login .new_register:hover { background: none repeat scroll 0% 0% rgb(249, 249, 249); }
+.sub { border: 1px solid rgb(220, 1, 56); color: rgb(255, 255, 255); text-align: center; border-radius: 2px; display: block; cursor: pointer; }
+.sub:hover { text-decoration: none; }
+.sub01 { background: none repeat scroll 0% 0% rgb(255, 51, 102); }
+.sub01:hover { background: none repeat scroll 0% 0% rgb(255, 81, 125); }
+.sub02 { background: none repeat scroll 0% 0% rgb(254, 103, 0); border: 1px solid rgb(220, 83, 1); }
+.sub02:hover { background: none repeat scroll 0% 0% rgb(255, 146, 71); }
+.busi_nav { width: 100%; background: none repeat scroll 0% 0% rgb(42, 20, 43); }
+.m_nav { width: 980px; margin: 0px auto; height: 40px; }
+.m_nav li { float: left; height: 40px; }
+.m_nav li a { padding: 0px 30px; display: block; color: rgb(255, 255, 255); line-height: 40px; font-size: 14px; font-family: "宋体"; }
+.m_nav li a:hover, .m_nav li .active { background: none repeat scroll 0% 0% rgb(255, 45, 94); text-decoration: none; }
+.my_zhuanghu li a { color: rgb(255, 255, 204); }
+.not_btn { margin-bottom: 20px; border: 1px solid rgb(226, 226, 226); background: none repeat scroll 0% 0% rgb(255, 255, 255); height: 190px; }
+.not_btn ul { margin: 0px 20px; padding-bottom: 10px; }
+.not_btn ul li { margin-bottom: 6px; background: url('../images/enroll.gif') no-repeat scroll -153px -32px transparent; padding-left: 15px; overflow: hidden; font-size: 14px; }
+.not_btn ul li a { color: rgb(102, 102, 102); }
+.not_btn ul li em { background: url('../images/enroll.gif') no-repeat scroll 0px -43px transparent; width: 21px; height: 9px; float: left; margin: 8px 0px 0px 4px; display: inline; text-indent: -9999px; }
+.busi_con { height: 270px; margin-bottom: 20px; }
+.busi_bar { width: 610px; height: 270px; position: relative; }
+.busi_notice { width: 348px; font-size: 14px; }
+.busi_notice .btn { width: 348px; height: 58px; line-height: 58px; }
+.busi_notice .btn a { background: none repeat scroll 0% 0% rgb(255, 51, 102); border-radius: 2px; border: 1px solid rgb(220, 1, 56); display: block; text-align: center; font-size: 28px; font-family: "微软雅黑"; text-shadow: 1px 0px 0px rgb(174, 70, 0); color: rgb(255, 255, 255); }
+.busi_notice .btn a:hover { background: none repeat scroll 0% 0% rgb(255, 81, 125); text-decoration: none; }
+.not_btn p { height: 29px; line-height: 29px; border-bottom: 1px solid rgb(226, 226, 226); background: none repeat scroll 0% 0% rgb(249, 249, 249); margin-bottom: 14px; }
+.not_btn p a { padding: 0px 36px; display: block; float: left; border-right: 1px solid rgb(226, 226, 226); font-size: 14px; font-weight: 700; color: rgb(51, 51, 51); }
+.not_btn p a:hover { text-decoration: none; }
+.not_btn p .active { background: none repeat scroll 0% 0% rgb(255, 255, 255); height: 30px; }
+.busi_path { height: 120px; width: 978px; border: 1px solid rgb(226, 226, 226); background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+.busi_path .path_t { position: relative; display: block; height: 120px; width: 118px; background: none repeat scroll 0% 0% rgb(243, 243, 243); border-right: 1px solid rgb(226, 226, 226); margin-right: 48px; }
+.busi_path .path_pic { background: url('../images/enroll_001.gif') no-repeat scroll -1px -276px transparent; width: 80px; height: 50px; display: block; margin: 35px auto; text-indent: -9999px; }
+.san_right { background: url('../images/enroll_001.gif') no-repeat scroll right -119px transparent; position: absolute; top: 50%; right: -8px; width: 8px; height: 14px; margin-top: -7px; }
+.busi_path ul { margin-top: 20px; }
+.busi_path ul li { width: 124px; height: 40px; float: left; display: inline; margin-right: 45px; background: url('../images/enroll_001.gif') no-repeat scroll 0% 0% transparent; }
+.busi_path ul .frist { background-position: 0px -75px; }
+.busi_path ul .sencond { background-position: 0px -127px; }
+.busi_path ul .third { background-position: 0px -181px; }
+.busi_path ul .four { background-position: 0px -230px; margin-right: 0px; }
+.busi_path ul li p { margin-top: 40px; height: 0px; width: 110px; font-size: 12px; line-height: 14px; color: rgb(204, 204, 204); }
+.busi_path ul li em { float: right; margin-right: -10px; }
+.busi_path .ready { margin: 22px 0px 0px; }
+.busi_path .ready a { display: block; font-weight: 700; color: rgb(2, 137, 205); font-size: 14px; margin-top: 15px; font-family: "宋体"; }
+.busi_jieshao_mb { margin-bottom: 30px; }
+.busi_jieshao h3 { position: relative; margin-bottom: 40px; }
+.busi_jieshao h3 .line { border-bottom: 1px solid rgb(255, 255, 255); margin: 0px auto; border-top: 1px solid rgb(191, 191, 190); height: 0px; overflow: hidden; }
+.busi_jieshao .line-txt { width: 160px; font-size: 22px; font-family: "微软雅黑"; color: rgb(51, 51, 51); position: absolute; left: 50%; top: -18px; margin-left: -80px; text-align: center; background: none repeat scroll 0% 0% rgb(252, 252, 252); font-weight: normal; }
+.busi_jieshao ul, .busi_info_tab ul { width: 1005px; }
+.busi_jieshao li { float: left; margin: 0px 25px 25px 0px; width: 308px; height: 248px; background: none repeat scroll 0% 0% rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); display: inline; }
+.busi_jieshao li h4 { background: none repeat scroll 0% 0% rgb(249, 249, 249); padding-left: 20px; color: rgb(51, 51, 51); font-size: 14px; height: 37px; line-height: 37px; border-bottom: 1px solid rgb(226, 226, 226); }
+.busi_jieshao li h5 { margin-bottom: 5px; }
+.busi_jieshao li .box { padding: 15px 20px 20px; }
+.busi_jieshao li .production { padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px dashed rgb(226, 226, 226); }
+.busi_jieshao li .production_1 { margin-bottom: 25px; }
+.busi_jieshao li .production_2 { margin-bottom: 15px; }
+.busi_jieshao li .production_1 p { line-height: 22px; }
+.btns-all .where { color: rgb(2, 137, 205); margin: 8px 0px 0px; font-family: "宋体"; }
+.btns-all .sub01 { display: block; width: 130px; height: 28px; line-height: 28px; color: rgb(255, 255, 255); font-weight: 700; }
+#alert_confirm .alert_content ul li::after { clear: both; content: "."; display: block; height: 0px; visibility: hidden; }
+.busi_login .y_login {
+    line-height: 26px;
+}
+.busi_login .y_login strong {
+    color: #ff3366;
+    padding: 0 10px;
+}
+.busi_login .y_login .user_img {
+    background-clip: padding-box;
+    border-radius: 50%;
+    display: inline;
+    float: left;
+    height: 26px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 26px;
+}
+.busi_login .y_login .out {
+    color: #333;
+}
+.busi_login .y_login .out:hover {
+    text-decoration: underline;
+}
+.foot {
+    position: relative;
+    margin: 40px auto 0px;
+    background: none repeat scroll 0% 0% rgb(249, 249, 249);
+    z-index: 100;
+    border-top: 1px solid rgb(206, 0, 63);
+    clear: both;
+}
+.foot .white_bg {
+    border-top: 3px solid rgb(248, 40, 92);
+}
+.foot .links {
+    height: 20px;
+    padding: 10px 0px;
+    border-bottom: 1px dotted rgb(204, 204, 204);
+    color: rgb(153, 153, 153);
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0px auto;
+}
+.foot .links span {
+    display: block;
+    overflow: hidden;
+    float: left;
+}
+.foot .links .links_list_box {
+    float: left;
+    width: 760px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.foot .links .links_list_box a {
+    margin-left: 10px;
+    float: left;
+    margin-bottom: 10px;
+}
+.foot .links .links_list {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.foot .links .links_list li {
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5px;
+}
+.foot .links .more {
+    float: right;
+    color: rgb(153, 153, 153);
+}
+.foot .links a.more:hover {
+    color: rgb(2, 137, 205);
+}
+.foot .links a {
+    color: rgb(153, 153, 153);
+}
+.foot .links .links_list li a {
+    margin-right: 10px;
+}
+.foot .links .links_list li a:hover {
+    text-decoration: underline;
+}
+.foot .logo {
+    color: rgb(153, 153, 153);
+    text-align: center;
+    padding-top: 10px;
+}
+.foot .logo img {
+    margin-right: 27px;
+}
+.foot-con {
+    width: 880px;
+    padding: 0px 50px 30px;
+    margin: 0px auto;
+}
+.side_right {
+    width: 40px;
+    left: 50%;
+    bottom: 150px;
+    margin-left: 615px;
+    position: fixed;
+    display: none;
+    z-index: 102;
+    border: 4px solid rgb(241, 236, 237);
+    background-color: rgb(241, 236, 237);
+    border-radius: 4px;
+}
+.side_right .con {
+    position: relative;
+    height: 85px;
+}
+ .side_right .trigger {
+    background:url(../images/btn_side.png) no-repeat;
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin:0 0 4px;
+    color:#fff;
+    text-align:center;
+    position:relative;
+}
+.side_right .trigger:hover {
+    color:#fff;
+}
+.side_right .trigger .sicon {
+    display:block;
+    background:url(../images/icon-right.gif) no-repeat;
+    height:40px;
+    width:40px;
+}
+.side_right .trigger .sicon-01 {
+    background-position:10px -36px;
+}
+.side_right .trigger .sicon-02 {
+    background-position:10px -80px
+}
+.side_right .trigger .sicon-03 {
+    background-position:10px -122px;
+}
+.side_right .trigger .sicon-04 {
+    background-position:0 -142px;
+}
+.side_right .trigger .sicon-05 {
+    background-position:10px 6px;
+}
+.side_right .trigger .sicon-06 {
+    background-position:10px -162px;
+}
+.side_right .trigger .sicon-07 {
+    background-position:10px -208px;
+}
+.side_right .trigger p {
+    display:none;
+    padding-top:3px;
+    line-height:16px;
+}
+.side_right .trigger:hover {
+    background-position:right top;
+    text-decoration:none;
+}
+.side_right .trigger:hover p {
+    display:block;
+}
+.side_right .trigger:hover span {
+    display:none;
+}
+.side_right .trigger.tag em.num {
+    width:auto;
+    height:12px;
+    line-height:12px;
+    padding:0 4px;
+    display:block;
+    position:absolute;
+    top:5px;
+    right:-2px;
+    background:#f8285c;
+    color:#f6f6f6;
+    text-align:center;
+    border-radius:15px;
+    font-family:"宋体";
+}
+.side_right .trigger.tag em.time {
+    position:absolute;
+    top:-55px;
+    left:0;
+    width:36px;
+    height:66px;
+    line-height:36px;
+    color:#fff;
+    font-family:"arial";
+    font-size:14px;
+    background:url(../images/tag-time.png) no-repeat;
+    font-size:12px;
+}

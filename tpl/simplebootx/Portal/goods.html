@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <title><if condition="!empty($seo_title)">{$seo_title}<else/>{$goods_name}</if> {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}" />
+    <meta name="description" content="{$seo_description}">
+    <tc_include file="Public:head" />
+    <link href="__TMPL__Public/css/goods.css" rel="stylesheet" />
+    <style>
+    #article_content img {
+        height:auto !important
+    }
+    </style>
+</head>
+
+<body class="">
+    <tc_include file="Public:nav" />
+    <!-- 主体 -->
+
+    <div class="main mt20 clear">
+        <!-- 面包屑 -->
+        <div class="place-show">
+            <div class="place-explain fl">
+                <a href="{$site_host}">小草折扣</a>
+                &gt;
+                <if condition="$term_id"><a href="{:leuu('list/index',array('id'=>$term_id))}">{$term_name}</a>
+                &gt;
+                </if>
+                <a class="bady-xx-seo" href="{:leuu('goods/index',array('id'=>$goods_id))}">{$goods_name}</a>
+            </div>
+        </div>
+        <!--items start-->
+        <div class="show_box fl">
+            <div class="show_body mb20 clear">
+                <div class="show_img fl">
+                    <a class="show_big buy" title="{$goods_name}">
+                        <span class="zhijian">质检</span>
+                        <img alt="{$goods_name}" src="{:sp_get_asset_upload_path($pic_url)}" height="310" width="310">
+                    </a>
+                </div>
+                <div class="price-info pr  fl">
+                    <h3 class="title">{$goods_name}</h3>
+                    <p class="body_price clear">
+                        <span class="price_f fl buy">
+                            <em class="price-ico">￥</em>
+                            <em class="price"><php>echo (float)$goods_price;</php></em>
+                        </span>
+                    </p>
+                    <p class="old_price clear">原价：
+                        <em class="price"><php>echo (float)$old_price;</php>元</em><php>echo sprintf( "%.1f ",$goods_price/$old_price)*10;</php>折
+                    </p>
+                    <p class="btn">
+                        <a class="go_btn buy fl" href="{:leuu('goods/goto',array('id'=>$goods_id))}" target="_blank" rel="nofollow">
+                            <span>去<eq name="goods_type" value="tmall">天猫</eq><eq name="goods_type" value="taobao">淘宝</eq>购买&gt;&gt;</span>
+                        </a>
+                        <!-- <a class="y-like my-like mt5 fl item-like-btn" href="javascript:void(0)">
+                            <em class="icon icon-k"></em>收藏</a> -->
+                    </p>
+                </div>
+            </div>
+            <div class="quality mb20">
+                <div class="quality_bg"></div>
+            </div>
+
+            <div class="bady-part">
+                <div class="bady-tab bady_bg clear" id="bady-tab">
+                    <ul class="fl">
+                        <li><a class="active" href="javascript:;">商品详情</a>
+                        </li>
+                    </ul>
+                    <div class="gobuy fr buy">
+                        <p class="price fl">
+                            <em class="yang">￥</em>
+                            <span class="jd-current"><php>echo (float)$goods_price;</php></span></p>
+                        <a class="btn  fl" href="{:leuu('goods/goto',array('id'=>$goods_id))}" target="_blank">
+                            <span>去<eq name="goods_type" value="tmall">天猫</eq><eq name="goods_type" value="taobao">淘宝</eq>购买&gt;&gt;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="con">
+                    <div style="padding-top:20px;" class="information">
+                        <div class="bady_info">
+                            <h3>
+                                <div class="line"></div>
+                                <div class="line-txt">小草质检
+                                    <a name="zj"></a>
+                                </div>
+                            </h3>
+                            <div class="info_s1">
+                                <img src="__TMPL__Public/images/info_s1.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="bady_info">
+                            <h3>
+                                <div class="line"></div>
+                                <div class="line-txt">商品描述
+                                    <a name="ms"></a>
+                                </div>
+                            </h3>
+                            <div class="info_s1 clear">
+                                <if condition="$goods_body">
+                                    {$goods_body}
+                                <else/>
+                                    暂无内容
+                                </if>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 0px;" class="information">
+                        <div class="xiaobao">
+                            <div class="xb_icon">
+                                <a class="xb_s xb_s1" href="javascript:;" onmouseover="show(1)">商家审核</a>
+                                <a class="xb_s xb_s2" href="javascript:;" onmouseover="show(2)">买手砍价</a>
+                                <a class="xb_s xb_s3" href="javascript:;" onmouseover="show(3)">验货质检</a>
+                                <a class="xb_s xb_s4" href="javascript:;" onmouseover="show(4)">价格监控</a>
+                                <a class="xb_s xb_s5" href="javascript:;" onmouseover="show(5)">全国包邮 </a>
+                                <a class="xb_s xb_s6" href="javascript:;" onmouseover="show(6)">七天退换</a>
+                                <a class="xb_s xb_s7" href="javascript:;" onmouseover="show(7)">闪电发货</a>
+                            </div>
+                        </div>
+                        <div class="xb_js">
+                            <div class="steup steup_01" style="display: block;"></div>
+                            <div style="display: none;" class="steup steup_02"></div>
+                            <div style="display: none;" class="steup steup_03"></div>
+                            <div style="display: none;" class="steup steup_04"></div>
+                            <div style="display: none;" class="steup steup_05"></div>
+                            <div style="display: none;" class="steup steup_06"></div>
+                            <div style="display: none;" class="steup steup_07"></div>
+                            <em class="jiao"></em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hot_box fr">
+            <div class="hot_goods">
+                <h3>
+                    <div class="line"></div>
+                    <div class="line-txt">HOT同类热卖</div>
+                </h3>
+                <ul>
+                    <volist name="list" id="v">
+                    <li>
+                        <a target="_blank" href="{:leuu('goods/index',array('id'=>$v['goods_id']))}">
+                            <img src="{:sp_get_asset_upload_path($v['pic_url'])}" alt="{$v.goods_name}">
+                            <div class="hot_price">
+                                <em class="hot_yang">￥</em>
+                                <em class="hot_num">{$v.goods_price}</em>
+                            </div>
+                        </a>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /主体 -->
+    <tc_include file="Public:footer" />
+    <tc_include file="Public:scripts" />
+    <script type="text/javascript">
+        function show(i) {
+            $('.steup').hide();
+            $('.steup_0'+i).show();
+        }
+        $('#bady-tab').waypoint(function(event, direction) {
+            $(this).parent().toggleClass('sticky', direction === "down");
+            event.stopPropagation();
+        }); 
+    </script>
+</body>
+
+</html>
